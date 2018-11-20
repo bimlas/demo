@@ -163,6 +163,8 @@ Error message and password prompt
 
 <li>Dynamically generated macros</li>
 
+<li>Generating the macros and making it globally available</li>
+
 <li>Show date of creation</li>
 
 <li>Show title</li>
@@ -8713,11 +8715,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20181120163402869" modified="20181120164746151" title="$:/DefaultTiddlers">
+<div created="20181120163402869" modified="20181120170814967" title="$:/DefaultTiddlers">
 <pre>[[Dynamically generated macros]]
+[[Generating the macros and making it globally available]]
+[[Use of dynamic macro]]
 [[Show title]]
-[[Show date of creation]]
-[[Use of dynamic macro]]</pre>
+[[Show date of creation]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -8734,10 +8737,10 @@ Error message and password prompt
 <div created="20181120161541951" modified="20181120161541951" title="$:/state/tab/moresidebar-401116514">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20181120161534606" modified="20181120164801410" title="$:/state/tab/sidebar--1835078512">
+<div created="20181120161534606" modified="20181120170833064" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="[[Dynamically generated macros]] [[Show title]] [[Show date of creation]] [[Use of dynamic macro]]" title="$:/StoryList">
+<div list="[[Dynamically generated macros]] [[Generating the macros and making it globally available]] [[Use of dynamic macro]] [[Show title]] [[Show date of creation]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20181120161500473" modified="20181120163043983" title="$:/temp/advancedsearch">
@@ -8756,15 +8759,15 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://tiddlywiki.com/empty.html&quot;
+            &quot;text&quot;: &quot;https://bimlas.gitlab.io/demo/tw5/generate-macros-by-tags.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
@@ -8776,7 +8779,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/empty.html&quot;
+            &quot;text&quot;: &quot;/demo/tw5/generate-macros-by-tags.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8784,7 +8787,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;https://bimlas.gitlab.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -8909,7 +8912,14 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20181120160745429" modified="20181120164724706" tags="$:/tags/Macro" title="Dynamically generated macros">
+<div created="20181120170240373" modified="20181120170610883" tags="" title="Dynamically generated macros">
+<pre>Creating single macros from several tiddlers tagged by specified tag.
+
+For example, below `actions` macro is created from contents of tiddlers tagged by `$:/macrotransclude/actions`.
+
+See the code of tiddlers to understand it.</pre>
+</div>
+<div created="20181120160745429" modified="20181120170716745" tags="$:/tags/Macro" title="Generating the macros and making it globally available">
 <pre>\define include-macros(prefix)
 &lt;$list filter=&quot;[all[tags]prefix[$prefix$]]&quot; variable=&quot;tag&quot;&gt;
   &lt;$list filter=&quot;[&lt;tag&gt;removeprefix[$prefix$]]&quot; variable=&quot;macroName&quot;&gt;
@@ -8926,7 +8936,9 @@ Error message and password prompt
 &lt;&lt;generate-macros&gt;&gt;
 &lt;/$wikify&gt;
 
-&lt;&lt;action-no&gt;&gt;</pre>
+Here's the inplace call of the generated macro:
+
+&lt;&lt;actions&gt;&gt;</pre>
 </div>
 <div created="20181120164617627" modified="20181120164758337" tags="$:/macrotransclude/actions" title="Show date of creation">
 <pre>//{{!!created}}//</pre>
@@ -8934,8 +8946,8 @@ Error message and password prompt
 <div created="20181120160756315" modified="20181120164558211" tags="$:/macrotransclude/actions" title="Show title">
 <pre>//{{!!title}}//</pre>
 </div>
-<div created="20181120163655055" modified="20181120164533740" tags="" title="Use of dynamic macro">
-<pre>Here I calling the generated `actions` macro:
+<div created="20181120163655055" modified="20181120170803441" tags="" title="Use of dynamic macro">
+<pre>Here I calling the globally available `actions` macro:
 
 &lt;&lt;actions&gt;&gt;</pre>
 </div>
