@@ -161,7 +161,11 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Another usage</li>
+
 <li>Definition of variables</li>
+
+<li>README</li>
 
 <li>Using variables</li>
 
@@ -9058,10 +9062,10 @@ Error message and password prompt
 <div created="20181218190651809" modified="20181218190651809" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20181218185812531" modified="20181218185812531" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20181218185812531" modified="20181220224842121" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20181218185813582" list="[[Using variables]] [[Definition of variables]]" modified="20181218190824009" title="$:/StoryList">
+<div created="20181220224844251" list="README [[Definition of variables]] [[Using variables]] [[Another usage]]" modified="20181220225328782" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20181218190653788" modified="20181218190704006" title="$:/temp/advancedsearch">
@@ -9080,19 +9084,19 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://tiddlywiki.com/empty.html&quot;
+            &quot;text&quot;: &quot;file:///D:/src/demo/public/tw5/sharing-variables-between-macros.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;https:&quot;
+            &quot;text&quot;: &quot;file:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9100,7 +9104,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/empty.html&quot;
+            &quot;text&quot;: &quot;/D:/src/demo/public/tw5/sharing-variables-between-macros.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9108,7 +9112,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;file://&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -9230,20 +9234,46 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20181218185310352" modified="20181218190713577" title="Definition of variables">
+<div created="20181220224906330" modified="20181220225311711" title="Another usage">
+<pre>\import [[Definition of variables]]
+
+\define another()
+
+&lt;&lt;wikifiedText&gt;&gt;
+
+\end
+
+Another usage of variables:
+
+---
+
+&lt;$macrocall $name=&quot;pass-vars-for-me&quot; template=&lt;&lt;another&gt;&gt;/&gt;</pre>
+</div>
+<div created="20181218185310352" modified="20181220225214273" title="Definition of variables">
 <pre>\define pass-vars-for-me(template)
 
 &lt;$set name=&quot;inputTiddlers&quot; filter=&quot;[all[shadows]]&quot;&gt;
 &lt;$set name=&quot;myfilter&quot; value=&quot;[first[5]]&quot;&gt;
+&lt;$wikify name=&quot;wikifiedText&quot; text=&quot;Complex wikified text to reuse (instead of 'building' it again).&quot;&gt;
 
 &lt;&lt;__template__&gt;&gt;
 
+&lt;/$wikify&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 
-\end</pre>
+\end
+
+Defining `set` and `wikify` variables in `pass-vars-for-me` macro.</pre>
 </div>
-<div created="20181218185018780" modified="20181218190818705" tags="" title="Using variables">
+<div created="20181220223502176" modified="20181220225743382" tags="" title="README">
+<pre>As far as I know, the `set` and `wikify` values can not be shared between the macros, but as shown below, we can embed the macro into the `set` and `wikify` block to make variables available to him.
+
+----
+
+Originally, I thought we only had to declare the variables once and then we could use their values again without spending more time, but I was wrong: every time calling of the &quot;container&quot; macro declare them again.</pre>
+</div>
+<div created="20181218185018780" modified="20181220225305358" tags="" title="Using variables">
 <pre>\import [[Definition of variables]]
 
 \define mylist(title) 
@@ -9252,7 +9282,13 @@ $title$:
 
 &lt;&lt;list-links &quot;[enlist&lt;inputTiddlers&gt;subfilter&lt;myfilter&gt;]&quot;&gt;&gt;
 
+&lt;&lt;wikifiedText&gt;&gt;
+
 \end
+
+Using the variables defined in [[Definition of variables]]:
+
+----
 
 &lt;$macrocall $name=&quot;pass-vars-for-me&quot; template=&lt;&lt;mylist &quot;Some shadow tiddlers&quot;&gt;&gt;/&gt;</pre>
 </div>
