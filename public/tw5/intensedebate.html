@@ -223,6 +223,8 @@ Error message and password prompt
 
 <li>$:/plugins/bimlas/disqus/macro/counter</li>
 
+<li>$:/plugins/bimlas/disqus/template</li>
+
 <li>$:/plugins/tiddlywiki/highlight</li>
 
 <li>$:/SiteSubtitle</li>
@@ -232,6 +234,8 @@ Error message and password prompt
 <li>$:/state/bimlas/disqus</li>
 
 <li>$:/state/plugin-info--1559898724-$:/plugins/bimlas/disqus---1685592359</li>
+
+<li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab-1163638994</li>
 
@@ -261,7 +265,11 @@ Error message and password prompt
 
 <li>$:/StoryList</li>
 
+<li>$:/temp/advancedsearch</li>
+
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -9326,7 +9334,7 @@ please wait
     }
 }</pre>
 </div>
-<div created="20190220125212018" modified="20190220130017128" module-type="widget" tags="" title="$:/plugins/bimlas/disqus/intensedebate.js" type="application/javascript">
+<div created="20190220125212018" modified="20190220131626531" module-type="widget" tags="" title="$:/plugins/bimlas/disqus/intensedebate.js" type="application/javascript">
 <pre>/*\
 title: $:/plugins/bimlas/disqus/intensedebate.js
 type: application/javascript
@@ -9358,6 +9366,8 @@ Render this widget into the DOM
 IntensedebateWidget.prototype.render = function(parent,nextSibling) {
 	this.parentDomNode = parent;
 	this.execute();
+
+var current = this.getAttribute(&quot;tiddler&quot;,this.getVariable(&quot;currentTiddler&quot;));
 
         window.idcomments_acct = 'd455630ac3d4dc59b2dc38bd4d56b9e0';
         window.idcomments_post_url = $tw.wiki.getTiddlerText('$:/config/bimlas/disqus/url') + encodeURIComponent(current);
@@ -9476,6 +9486,35 @@ Display Disqus comments counter
 })();
 </pre>
 </div>
+<div created="20190220131710215" modified="20190220131715761" tags="$:/tags/ViewTemplate" title="$:/plugins/bimlas/disqus/template" type="text/vnd.tiddlywiki">
+<pre>&lt;$list filter=&quot;[all[current]subfilter{$:/config/bimlas/disqus/filter}]&quot; variable=&quot;doNotOverrideCurrent&quot;&gt;
+	&lt;$set name=&quot;stateTiddler&quot; value=&quot;$:/state/bimlas/disqus&quot;&gt;
+		&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=&lt;&lt;currentTiddler&gt;&gt;&gt;
+			@@.bimlas-disqus-toggle
+				&lt;$button class=&quot;tc-btn-invisible&quot; set=&lt;&lt;stateTiddler&gt;&gt; setTo=&lt;&lt;currentTiddler&gt;&gt; &gt;
+					{{$:/core/images/down-arrow}}
+					[img[https://disqus.com/favicon.ico]]
+					Show Disqus comments
+				&lt;/$button&gt;
+				&lt;$macrocall $name=&quot;disqus-counter&quot; current=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+			@@
+		&lt;/$reveal&gt;
+		&lt;$reveal type=&quot;match&quot; state=&lt;&lt;stateTiddler&gt;&gt; text=&lt;&lt;currentTiddler&gt;&gt;&gt;
+			@@.bimlas-disqus-toggle
+				&lt;$button class=&quot;tc-btn-invisible&quot; set=&lt;&lt;stateTiddler&gt;&gt; setTo=&quot;&quot;&gt;
+					{{$:/core/images/up-arrow}}
+					[img[https://disqus.com/favicon.ico]]
+					Hide Disqus comments
+				&lt;/$button&gt;
+				&lt;$macrocall $name=&quot;disqus-counter&quot; current=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+			@@
+
+			&lt;$intensedebate/&gt;
+
+		&lt;/$reveal&gt;
+	&lt;/$set&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div author="JoaoBolila" bag="default" core-version="&gt;=5.0.0" dependents="" description="Highlight.js: syntax highlighting" list="readme usage license" plugin-type="plugin" revision="0" title="$:/plugins/tiddlywiki/highlight" type="application/json" version="5.1.19">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -9554,6 +9593,9 @@ Display Disqus comments counter
 <div created="20190219215822304" modified="20190219215826713" title="$:/state/plugin-info--1559898724-$:/plugins/bimlas/disqus---1685592359">
 <pre>contents</pre>
 </div>
+<div created="20190220131454532" modified="20190220131454532" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+</div>
 <div created="20190220125146580" modified="20190220125146580" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
 </div>
@@ -9593,8 +9635,11 @@ Display Disqus comments counter
 <div created="20190220125338862" modified="20190220125340804" title="$:/state/tree/$:/snippets/">
 <pre>hide</pre>
 </div>
-<div created="20190220125209033" list="$:/plugins/bimlas/disqus/macro/comments $:/plugins/bimlas/disqus/intensedebate.js $:/core/modules/widgets/raw.js [[Nothing to see here]] [[Another tiddler]]" modified="20190220125536714" title="$:/StoryList">
+<div created="20190220131428737" list="$:/AdvancedSearch $:/core/modules/widgets/fields.js $:/plugins/bimlas/disqus/intensedebate.js $:/plugins/bimlas/disqus/template [[Nothing to see here]] [[Another tiddler]]" modified="20190220131656333" title="$:/StoryList">
 <pre></pre>
+</div>
+<div created="20190220131455825" modified="20190220131533512" title="$:/temp/advancedsearch">
+<pre>[all[shadows]search:title[widget]search[currentTid]]</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -9649,6 +9694,9 @@ Display Disqus comments counter
         }
     }
 }</pre>
+</div>
+<div created="20190220131700455" modified="20190220131701117" title="$:/temp/search">
+<pre>draf</pre>
 </div>
 <div author="JeremyRuston" bag="default" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" revision="0" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.19">
 <pre>{
