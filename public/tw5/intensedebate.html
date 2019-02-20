@@ -227,9 +227,15 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/bimlas/disqus</li>
+
 <li>$:/state/plugin-info--1559898724-$:/plugins/bimlas/disqus---1685592359</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab/moresidebar-1850697562</li>
+
+<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/StoryList</li>
 
@@ -9298,7 +9304,7 @@ please wait
     }
 }</pre>
 </div>
-<div created="20190219220148027" modified="20190219225714455" module-type="macro" tags="$:/tags/Macro" title="$:/plugins/bimlas/disqus/macro/comments" type="application/javascript">
+<div created="20190219220148027" modified="20190220071713592" module-type="macro" tags="$:/tags/Macro" title="$:/plugins/bimlas/disqus/macro/comments" type="application/javascript">
 <pre>/*\
 module-type: macro
 tags: $:/tags/Macro
@@ -9333,7 +9339,7 @@ Display Disqus comments
 
 		window.idcomments_acct = 'd455630ac3d4dc59b2dc38bd4d56b9e0';
 		window.idcomments_post_url = $tw.wiki.getTiddlerText('$:/config/bimlas/disqus/url') + encodeURIComponent(current);
-        window.idcomments_post_id = null;
+        window.idcomments_post_id = $tw.wiki.getTiddlerText('$:/config/bimlas/disqus/url') + encodeURIComponent(current);
 
 		/* Load Disqus */
 		var loader = document.createElement('script');
@@ -9451,13 +9457,22 @@ Display Disqus comments counter
 <div bag="default" created="20190219071724934" modified="20190219071733732" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>[[TW5|https://tiddlywiki.com/]] Disqus comments plugin</pre>
 </div>
+<div created="20190220070930709" modified="20190220071810477" title="$:/state/bimlas/disqus">
+<pre></pre>
+</div>
 <div created="20190219215822304" modified="20190219215826713" title="$:/state/plugin-info--1559898724-$:/plugins/bimlas/disqus---1685592359">
 <pre>contents</pre>
 </div>
 <div created="20190219222226678" modified="20190219225834671" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div list="[[Nothing to see here]] [[Another tiddler]]" title="$:/StoryList">
+<div created="20190220070942505" modified="20190220070942505" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Plugins</pre>
+</div>
+<div created="20190220070939230" modified="20190220070939230" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
+</div>
+<div created="20190220070943812" list="$:/plugins/bimlas/disqus $:/plugins/bimlas/disqus/macro/comments [[Nothing to see here]] [[Another tiddler]]" modified="20190220070945778" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9473,19 +9488,19 @@ Display Disqus comments counter
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://bimlas.gitlab.io/tw5-disqus/&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/Laci/Documents/0_git/demo/public/tw5/intensedebate.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;https:&quot;
+            &quot;text&quot;: &quot;file:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9493,7 +9508,7 @@ Display Disqus comments counter
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/tw5-disqus/&quot;
+            &quot;text&quot;: &quot;/C:/Users/Laci/Documents/0_git/demo/public/tw5/intensedebate.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9501,7 +9516,7 @@ Display Disqus comments counter
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://bimlas.gitlab.io&quot;
+            &quot;text&quot;: &quot;file://&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
