@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <style>
+            #main {
+                display: flex;
+            }
+            #properties {
+                margin: 1em;
+                padding: 1em;
+                border-radius: 1em;
+                background-color: beige;
+            }
+            #preview {
+                margin: 2em;
+                display: flex;
+                position: relative;
+            }
+            #preview span {
+                display: block;
+
+                /*
+                First we need to help some browsers along for this to work.
+                Just because a vendor prefix is there, doesn't mean it will
+                work in a browser made by that vendor either, it's just for
+                future-proofing purposes I guess.
+                */
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                /* ...and now for the proper property */
+                transition:.5s;
+            }
+            #rollo {
+                background-color: burlywood;
+                width: 100px;
+                height: 200px;
+            }
+            #cover {
+                background-color: khaki;
+                position: absolute;
+                z-index: 1000;
+                top: 0;
+                left: 5px;
+                width: 100px;
+                height: 15px;
+            }
+            .side {
+                width: 5px;
+                background-color: black;
+                height: calc(200px * 0.7);
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('properties').addEventListener('change', event => {
+                    const width = Number(document.getElementById('width').value);
+                    const height = Number(document.getElementById('height').value);
+                    const is1G = document.getElementById('type').value === '1G';
+                    document.getElementById('total').innerText = width * height * (!is1G ? 1.5 : 1);
+                });
+
+                document.getElementById('width').addEventListener('change', event => {
+                    document.getElementById('rollo').style.width = event.target.value + 'px';
+                    document.getElementById('cover').style.width = event.target.value + 'px';
+                });
+                document.getElementById('height').addEventListener('change', event => {
+                    document.getElementById('rollo').style.height = event.target.value + 'px';
+                    new Array().forEach.call(document.getElementsByClassName('side'), side => {
+                        side.style.height = Number(event.target.value) * 0.7 + 'px'
+                    });
+                });
+                document.getElementById('type').addEventListener('change', event => {
+                    document.getElementById('cover').style.opacity = event.target.value == '1G' ? 0 : 1;
+                });
+                document.getElementById('side').addEventListener('change', event => {
+                    new Array().forEach.call(document.getElementsByClassName('side'), elem => {
+                        elem.style.opacity = elem.id.endsWith(event.target.value) ? 1 : 0;
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <form id="properties">
+                <p><label for="width">Szélesség <input type="text" id="width"></label></p>
+                <p><label for="height">Magasság <input type="text" id="height"></label></p>
+                <p>
+                    <label for="type">Típus
+                        <select id="type">
+                            <option value="1G">1G</option>
+                            <option value="2G">2G</option>
+                            <option value="2R">2R</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="side">Felhúzózsinór elhelyezkedése
+                        <select id="side">
+                            <option value="left">Bal</option>
+                            <option value="right">Jobb</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <strong>Végösszeg: <span id="total"></span></strong>
+                </p>
+                <button type="submit">Megrendelem, mert kell nekem!</button>
+            </form>
+            <div id="preview">
+                <span id="side-left" class="side"></span>
+                <span id="rollo"></span>
+                <span id="side-right" class="side"></span>
+                <span id="cover"></span>
+            </div>
+        </div>
+    </body>
+</html>
