@@ -171,6 +171,8 @@ Error message and password prompt
 
 <li>Advanced Search filter completion - Results</li>
 
+<li>README</li>
+
 <li>splitafter.js</li>
 
 </ul>
@@ -9080,11 +9082,11 @@ Error message and password prompt
 <div created="20190720222853761" modified="20190720223603026" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="$:/AdvancedSearch [[Advanced Search filter completion - Filter]] [[Advanced Search filter completion - Results]] splitafter.js" title="$:/StoryList">
+<div list="README $:/AdvancedSearch [[Advanced Search filter completion - Filter]] [[Advanced Search filter completion - Results]] splitafter.js" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20190720222906598" modified="20190721093310570" title="$:/temp/advancedsearch">
-<pre>[all[system]pre</pre>
+<div created="20190720222906598" modified="20190721094924475" title="$:/temp/advancedsearch">
+<pre>[all[system]suf</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -9099,7 +9101,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///D:/download/empty%20(1).html&quot;
+            &quot;text&quot;: &quot;file:///D:/download/advanced-search-filter-with-completion.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -9119,7 +9121,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/D:/download/empty%20(1).html&quot;
+            &quot;text&quot;: &quot;/D:/download/advanced-search-filter-with-completion.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9255,9 +9257,11 @@ Error message and password prompt
 <div created="20190720222818595" modified="20190720222818595" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div caption="Filter with code completion" created="20190720153043014" modified="20190721093232039" tags="$:/tags/AdvancedSearch" title="Advanced Search filter completion - Filter">
+<div caption="Filter with code completion" created="20190720153043014" modified="20190721095555707" tags="$:/tags/AdvancedSearch" title="Advanced Search filter completion - Filter">
 <pre>\define lingo-base() $:/language/Search/
 &lt;&lt;lingo Filter/Hint&gt;&gt;
+
+&lt;!-- BASED ON $:/core/ui/AdvancedSearch/Filter --&gt;
 
 &lt;div class=&quot;tc-search tc-advanced-search&quot;&gt;
 &lt;$edit-text tiddler=&quot;$:/temp/advancedsearch&quot; type=&quot;search&quot; tag=&quot;input&quot; focusPopup=&quot;$:/state/popup/advancedsearch-filter-dropdown&quot; class=&quot;tc-popup-handle&quot;/&gt;
@@ -9267,6 +9271,7 @@ Error message and password prompt
 &lt;$set name=&quot;leftBracket&quot; value=&quot;[&quot;&gt;
 &lt;$set name=&quot;rightBracket&quot; value=&quot;]&quot;&gt;
 &lt;$set name=&quot;textToComplete&quot; filter=&quot;[{$:/temp/advancedsearch}removeprefix&lt;leftBracket&gt;splitafter&lt;rightBracket&gt;minlength[1]] [[SEARCH SHOULD NOT MATCH ANYTHING IF TEXT TO COMPLETE IS EMPTY]] +[limit[1]]&quot;&gt;
+&lt;!-- THE COMPLETION IS BASED ON TITLE OF FILTEROPERATORS, FOR EXAMLE $:/core/modules/filters/all.js -&gt; all --&gt;
 &lt;$set name=&quot;possibleCompletions&quot; filter=&quot;[all[system+shadows]module-type[filteroperator]splitafter[/]removesuffix[.js]search:title&lt;textToComplete&gt;sort[title]limit[250]]&quot;&gt;
 
 &lt;$reveal state=&quot;$:/temp/advancedsearch&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
@@ -9284,8 +9289,10 @@ Error message and password prompt
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div caption="{{$:/language/Search/DefaultResults/Caption}}" created="20190720133535297" modified="20190721093115539" tags="$:/tags/SearchResults" title="Advanced Search filter completion - Results">
-<pre>&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; default=&lt;&lt;possibleCompletions&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+<div caption="{{$:/language/Search/DefaultResults/Caption}}" created="20190720133535297" modified="20190721095159198" tags="$:/tags/SearchResults" title="Advanced Search filter completion - Results">
+<pre>&lt;!-- BASED ON $:/core/ui/DefaultSearchResultList AND $:/core/ui/SideBarSegments/search --&gt;
+
+&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; default=&lt;&lt;possibleCompletions&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
 
 &lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle&quot; state=&quot;$:/state/popup/advancedsearch-filter-dropdown&quot; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
 
@@ -9296,13 +9303,21 @@ Error message and password prompt
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div created="20190720223009189" modified="20190721092205339" module-type="filteroperator" tags="" title="splitafter.js" type="application/javascript">
+<div created="20190721094015469" modified="20190721095450575" tags="" title="README">
+<pre>This is a ''proof of concept for auto-completion of filters'' in [[$:/Advanced Search]], ''do not use it for anything important'', it's just demonstration!
+
+Start typing a filter expression in the &quot;Filter with code completion&quot; tab, auto-completions should appear. If they do not appear, try clicking on the text box in and out. Clicking on a completion does not applies the completion for now.
+
+All the tiddler from which the mechanism works are visible, open in edit mode to see the comments.</pre>
+</div>
+<div created="20190720223009189" modified="20190721095325459" module-type="filteroperator" tags="" title="splitafter.js" type="application/javascript">
 <pre>/*\
 title: $:/core/modules/filters/splitafter.js
 type: application/javascript
 module-type: filteroperator
 
-Filter operator that splits each result on the last occurance of the specified separator and returns the unique values.
+CUSTOM filter operator that splits each result on the last occurance of the specified separator and returns the unique values
+BASED ON $:/core/modules/filters/splitbefore.js
 
 \*/
 (function(){
@@ -9321,7 +9336,7 @@ exports.splitafter = function(source,operator,options) {
 		if(parts.length === 1) {
 			$tw.utils.pushTop(results,parts[0]);
 		} else {
-/* Do not add operator itself! */
+/* DO NOT ADD OPERATOR ITSELF AS SPLITBEFORE[] DOES! */
 			$tw.utils.pushTop(results,parts[parts.length-1]);
 		}
 console.log(parts);
