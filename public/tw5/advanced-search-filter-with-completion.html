@@ -169,6 +169,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>Advanced Search filter completion - Completion list item template</li>
+
 <li>Advanced Search filter completion - Filter</li>
 
 <li>Advanced Search filter completion - Results</li>
@@ -9081,17 +9083,17 @@ Error message and password prompt
 <div created="20190720222816176" modified="20190720222816176" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
-<div created="20190720222853761" modified="20190720223603026" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20190720222853761" modified="20190721214053277" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20190721210407301" list="README $:/AdvancedSearch $:/core/ui/ListItemTemplate [[Advanced Search filter completion - Filter]] [[Advanced Search filter completion - Results]] splitafter.js" modified="20190721210544438" title="$:/StoryList">
+<div created="20190721214057499" list="README $:/AdvancedSearch [[Advanced Search filter completion - Filter]] [[Advanced Search filter completion - Results]] [[Advanced Search filter completion - Completion list item template]] splitafter.js" modified="20190721214057499" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20190720222906598" modified="20190721210554803" title="$:/temp/advancedsearch">
+<div created="20190720222906598" modified="20190721215036030" title="$:/temp/advancedsearch">
 <pre>[all[shadows]suf</pre>
 </div>
-<div created="20190721184707159" modified="20190721210531017" title="$:/temp/advancedsearch-filter-selected-completion">
-<pre>all</pre>
+<div created="20190721184707159" modified="20190721214534076" title="$:/temp/advancedsearch-filter-selected-completion">
+<pre>removesuffix</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -9106,7 +9108,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///D:/src/demo/public/tw5/advanced-search-filter-with-completion.html&quot;
+            &quot;text&quot;: &quot;file:///D:/download/advanced-search-filter-with-completion%20(1).html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -9126,7 +9128,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/D:/src/demo/public/tw5/advanced-search-filter-with-completion.html&quot;
+            &quot;text&quot;: &quot;/D:/download/advanced-search-filter-with-completion%20(1).html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9262,6 +9264,17 @@ Error message and password prompt
 <div created="20190720222818595" modified="20190720222818595" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
+<div created="20190721210841011" modified="20190721215322958" title="Advanced Search filter completion - Completion list item template">
+<pre>&lt;div class=&quot;tc-menu-list-item&quot;&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+&lt;/$link&gt;
+&lt;!-- HOW TO LINK BUTTON INSTEAD OF &quot;A&quot; TO EXTERNAL LINK? HOW TO DISPLAY IN THE SAME LINE AS THE COMPLETION? --&gt;
+&lt;$wikify name=&quot;linkToDocumentation&quot; text=&quot;&quot;&quot;&lt;$text text=&quot;https://tiddlywiki.com/#&quot;/&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;$text text=&quot;%20Operator&quot;/&gt;&quot;&quot;&quot;&gt;
+&lt;a href=&lt;&lt;linkToDocumentation&gt;&gt; target=&quot;_blank&quot;&gt;{{$:/core/images/info-button}}&lt;/a&gt;
+&lt;/$wikify&gt;
+&lt;/div&gt;</pre>
+</div>
 <div caption="Filter with code completion" created="20190720153043014" modified="20190721210521213" tags="$:/tags/AdvancedSearch" title="Advanced Search filter completion - Filter">
 <pre>\define apply-completion-actions()
 &lt;$action-listops $tiddler=&quot;$:/temp/advancedsearch&quot; $field=&quot;text&quot; $subfilter=&quot;+[removesuffix&lt;textToComplete&gt;addsuffix{$:/temp/advancedsearch-filter-selected-completion}]&quot;/&gt; 
@@ -9298,7 +9311,7 @@ Error message and password prompt
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div caption="{{$:/language/Search/DefaultResults/Caption}}" created="20190720133535297" modified="20190721210512270" tags="$:/tags/SearchResults" title="Advanced Search filter completion - Results">
+<div caption="{{$:/language/Search/DefaultResults/Caption}}" created="20190720133535297" modified="20190721214456667" tags="$:/tags/SearchResults" title="Advanced Search filter completion - Results">
 <pre>&lt;!-- BASED ON $:/core/ui/DefaultSearchResultList AND $:/core/ui/SideBarSegments/search --&gt;
 
 &lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; default=&lt;&lt;possibleCompletions&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
@@ -9307,7 +9320,7 @@ Error message and password prompt
 
 &lt;$linkcatcher actions=&lt;&lt;apply-completion-actions&gt;&gt; to=&quot;$:/temp/advancedsearch-filter-selected-completion&quot;&gt;
 
-&lt;$list filter=&lt;&lt;possibleCompletions&gt;&gt; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
+&lt;$list filter=&lt;&lt;possibleCompletions&gt;&gt; template=&quot;Advanced Search filter completion - Completion list item template&quot;/&gt;
 
 &lt;/$linkcatcher&gt;
 
@@ -9316,7 +9329,7 @@ Error message and password prompt
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div created="20190721094015469" modified="20190721185002999" tags="" title="README">
+<div created="20190721094015469" modified="20190721215444054" tags="" title="README">
 <pre>This is a ''proof of concept for auto-completion of filters'' in [[$:/Advanced Search]], ''do not use it for anything important'', it's just demonstration!
 
 Start typing a filter expression in the &quot;Filter with code completion&quot; tab, auto-completions should appear. If they do not appear, try clicking on the text box in and out. Clicking on a completion does not applies the completion for now.
@@ -9327,7 +9340,11 @@ All the tiddler from which the mechanism works are visible, open in edit mode to
 
 !!! 2019-07-21
 
-* Selected completion applies to filter expression</pre>
+* Selected completion applies to filter expression
+
+!!! 2019-07-21 / 2
+
+* Add link to the completion of each operator to its documentation</pre>
 </div>
 <div created="20190720223009189" modified="20190721095325459" module-type="filteroperator" tags="" title="splitafter.js" type="application/javascript">
 <pre>/*\
