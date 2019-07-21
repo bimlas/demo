@@ -9072,7 +9072,7 @@ Error message and password prompt
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20190720222908744" modified="20190721093237057" title="$:/state/tab--1498284803">
+<div created="20190720222908744" modified="20190721210525408" title="$:/state/tab--1498284803">
 <pre>Advanced Search filter completion - Filter</pre>
 </div>
 <div created="20190720222817117" modified="20190720222817117" title="$:/state/tab--1963855381">
@@ -9084,13 +9084,13 @@ Error message and password prompt
 <div created="20190720222853761" modified="20190720223603026" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="README $:/AdvancedSearch [[Advanced Search filter completion - Filter]] [[Advanced Search filter completion - Results]] splitafter.js" title="$:/StoryList">
+<div created="20190721210407301" list="README $:/AdvancedSearch $:/core/ui/ListItemTemplate [[Advanced Search filter completion - Filter]] [[Advanced Search filter completion - Results]] splitafter.js" modified="20190721210544438" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20190720222906598" modified="20190721185251475" title="$:/temp/advancedsearch">
-<pre>[all[system]suf</pre>
+<div created="20190720222906598" modified="20190721210554803" title="$:/temp/advancedsearch">
+<pre>[all[shadows]suf</pre>
 </div>
-<div created="20190721184707159" modified="20190721185240108" title="$:/temp/advancedsearch-filter-selected-completion">
+<div created="20190721184707159" modified="20190721210531017" title="$:/temp/advancedsearch-filter-selected-completion">
 <pre>all</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9147,7 +9147,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20190720222952835" modified="20190720222956617" title="$:/temp/search">
+<div created="20190720222952835" modified="20190721210351503" title="$:/temp/search">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.19">
@@ -9262,7 +9262,7 @@ Error message and password prompt
 <div created="20190720222818595" modified="20190720222818595" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div caption="Filter with code completion" created="20190720153043014" modified="20190721185226754" tags="$:/tags/AdvancedSearch" title="Advanced Search filter completion - Filter">
+<div caption="Filter with code completion" created="20190720153043014" modified="20190721210521213" tags="$:/tags/AdvancedSearch" title="Advanced Search filter completion - Filter">
 <pre>\define apply-completion-actions()
 &lt;$action-listops $tiddler=&quot;$:/temp/advancedsearch&quot; $field=&quot;text&quot; $subfilter=&quot;+[removesuffix&lt;textToComplete&gt;addsuffix{$:/temp/advancedsearch-filter-selected-completion}]&quot;/&gt; 
 \end
@@ -9283,8 +9283,6 @@ Error message and password prompt
 &lt;!-- THE COMPLETION IS BASED ON TITLE OF FILTEROPERATORS, FOR EXAMLE $:/core/modules/filters/all.js -&gt; all --&gt;
 &lt;$set name=&quot;possibleCompletions&quot; filter=&quot;[all[system+shadows]module-type[filteroperator]splitafter[/]removesuffix[.js]search:title&lt;textToComplete&gt;sort[title]limit[250]] -[&lt;textToComplete&gt;]&quot;&gt;
 
-&lt;$linkcatcher actions=&lt;&lt;apply-completion-actions&gt;&gt; to=&quot;$:/temp/advancedsearch-filter-selected-completion&quot;&gt;
-
 &lt;$reveal state=&quot;$:/temp/advancedsearch&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
 &lt;$set name=&quot;resultCount&quot; value=&quot;&quot;&quot;&lt;$count filter={{$:/temp/advancedsearch}}/&gt;&quot;&quot;&quot;&gt;
 {{Advanced Search filter completion - Results}}
@@ -9295,21 +9293,23 @@ Error message and password prompt
 &lt;/$set&gt;
 &lt;/$reveal&gt;
 
-&lt;/$linkcatcher&gt;
-
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div caption="{{$:/language/Search/DefaultResults/Caption}}" created="20190720133535297" modified="20190721185202325" tags="$:/tags/SearchResults" title="Advanced Search filter completion - Results">
+<div caption="{{$:/language/Search/DefaultResults/Caption}}" created="20190720133535297" modified="20190721210512270" tags="$:/tags/SearchResults" title="Advanced Search filter completion - Results">
 <pre>&lt;!-- BASED ON $:/core/ui/DefaultSearchResultList AND $:/core/ui/SideBarSegments/search --&gt;
 
 &lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; default=&lt;&lt;possibleCompletions&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
 
 &lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle&quot; state=&quot;$:/state/popup/advancedsearch-filter-dropdown&quot; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
 
+&lt;$linkcatcher actions=&lt;&lt;apply-completion-actions&gt;&gt; to=&quot;$:/temp/advancedsearch-filter-selected-completion&quot;&gt;
+
 &lt;$list filter=&lt;&lt;possibleCompletions&gt;&gt; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
+
+&lt;/$linkcatcher&gt;
 
 &lt;/$reveal&gt;
 
