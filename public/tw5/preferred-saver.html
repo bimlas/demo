@@ -147,6 +147,14 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/GitLab/Filename</li>
+
+<li>$:/GitLab/Path</li>
+
+<li>$:/GitLab/Repo</li>
+
+<li>$:/GitLab/Username</li>
+
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
@@ -156,6 +164,10 @@ Error message and password prompt
 <li>$:/SiteTitle</li>
 
 <li>$:/state/bimlas/preferred-saver</li>
+
+<li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-2065006209</li>
 
 <li>$:/StoryList</li>
 
@@ -175,7 +187,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20190904194516616" modified="20190904201914333" module-type="saver" tags="" title="$:/bimlas/preferred-saver.js" type="application/javascript">
+<div created="20190904194516616" modified="20190905055017241" module-type="saver" tags="" title="$:/bimlas/preferred-saver.js" type="application/javascript">
 <pre>/*\
 title: $:/bimlas/preferred-saver.js
 type: application/javascript
@@ -221,8 +233,8 @@ Information about this saver
 PreferredSaver.prototype.info = {
 	name: &quot;preferred&quot;,
 	priority: 9999,
-	// TODO: It's incorrect!
-	capabilities: [&quot;save&quot;, &quot;autosave&quot;, &quot;download&quot;]
+	// TODO: &quot;autosave&quot;?
+	capabilities: [&quot;save&quot;, &quot;download&quot;]
 };
 
 /*
@@ -9438,6 +9450,18 @@ exports.create = function(wiki) {
 <div created="20190904194237965" modified="20190904194237965" title="$:/DefaultTiddlers">
 <pre>[list[$:/StoryList]]</pre>
 </div>
+<div created="20190905054737684" modified="20190905054739612" title="$:/GitLab/Filename">
+<pre>a01.html</pre>
+</div>
+<div created="20190905054656292" modified="20190905054734548" title="$:/GitLab/Path">
+<pre>/preferred-saver/</pre>
+</div>
+<div created="20190905054647164" modified="20190905054651804" title="$:/GitLab/Repo">
+<pre>bimlas/kill-this-repo</pre>
+</div>
+<div created="20190905054631086" modified="20190905054643388" title="$:/GitLab/Username">
+<pre>bimlas</pre>
+</div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
@@ -9452,10 +9476,16 @@ exports.create = function(wiki) {
 <div created="20190904194103259" modified="20190904195124435" title="$:/SiteTitle">
 <pre>Preferred, selectable saver</pre>
 </div>
-<div created="20190904200756490" modified="20190904200804499" tags="" title="$:/state/bimlas/preferred-saver">
+<div created="20190904200756490" modified="20190905054952363" tags="" title="$:/state/bimlas/preferred-saver">
 <pre>$:/core/modules/savers/download.js</pre>
 </div>
-<div created="20190904200754077" list="$:/state/bimlas/preferred-saver $:/bimlas/preferred-saver.js" modified="20190904200754077" title="$:/StoryList">
+<div created="20190905054627677" modified="20190905054627677" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
+</div>
+<div created="20190905054628917" modified="20190905054628917" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/GitLab</pre>
+</div>
+<div created="20190905054625459" list="$:/ControlPanel $:/state/bimlas/preferred-saver $:/bimlas/preferred-saver.js" modified="20190905054625459" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9471,19 +9501,19 @@ exports.create = function(wiki) {
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://tiddlywiki.com/empty.html&quot;
+            &quot;text&quot;: &quot;file:///media/laci/cuccok/src/demo/public/tw5/WIP-preferred-saver.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;https:&quot;
+            &quot;text&quot;: &quot;file:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9491,7 +9521,7 @@ exports.create = function(wiki) {
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/empty.html&quot;
+            &quot;text&quot;: &quot;/media/laci/cuccok/src/demo/public/tw5/WIP-preferred-saver.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9499,7 +9529,7 @@ exports.create = function(wiki) {
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://tiddlywiki.com&quot;
+            &quot;text&quot;: &quot;file://&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
