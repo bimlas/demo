@@ -314,7 +314,7 @@ Error message and password prompt
 &lt;/svg&gt;
 </pre>
 </div>
-<div created="20200823121002163" modified="20200824210323593" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
+<div created="20200823121002163" modified="20200824211004024" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
 <pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
 
 \define button-filter-off()
@@ -347,10 +347,11 @@ Error message and password prompt
     &lt;$action-listops $tiddler=&lt;&lt;stateTiddler&gt;&gt; $field=&quot;toggle-property-values-list&quot; $subfilter=&quot;-[&lt;property&gt;]&quot;/&gt;
     {{$:/core/images/down-arrow}}
   &lt;/$button&gt;
-  &lt;br&gt;
-  &lt;$list filter=&quot;[all[current]backlinks[]links[]prefix&lt;property&gt;sort[]]&quot;&gt;
-    &lt;&lt;cell-item&gt;&gt;
-  &lt;/$list&gt;
+  &lt;div style=&quot;text-align: left&quot;&gt;
+    &lt;$list filter=&quot;[all[current]backlinks[]links[]prefix&lt;property&gt;sort[]]&quot;&gt;
+      &lt;&lt;cell-item&gt;&gt;
+    &lt;/$list&gt;
+  &lt;/div&gt;
 \end
 
 \define button-list()
@@ -9925,7 +9926,7 @@ please wait
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824203820157" list="$:/bimlas/property-comparison Extinction [[#author: Audeka]] [[#author: Rawtekk]] #author: [[#author: Hidden Orchestra]] [[Hamburger and Macaroni]] [[#ingredient: Worcestershire sauce]] #category: [[#category: Recipe]] #ingredient: [[#ingredient: Beef]] [[#ingredient: Egg]]" modified="20200824210518505" title="$:/StoryList">
+<div created="20200824203820157" list="$:/AdvancedSearch $:/bimlas/property-comparison Extinction [[#category: Music]] [[#genre: Alternative]] [[#album: Secret South]] [[#author: Audeka]] [[#author: Rawtekk]] #author: [[#author: Hidden Orchestra]] [[Hamburger and Macaroni]] [[#ingredient: Worcestershire sauce]] #category: [[#category: Recipe]] #ingredient: [[#ingredient: Beef]] [[#ingredient: Egg]]" modified="20200824210856390" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22">
