@@ -281,18 +281,18 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200823121002163" modified="20200824101037968" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
+<div created="20200823121002163" modified="20200824101802688" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
 <pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
 
 \define button-filter-off()
-  &lt;$button&gt;
+  &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
     &lt;$action-listops $tiddler=&lt;&lt;stateTiddler&gt;&gt; $subfilter=&quot;[all[current]]&quot;/&gt;
     {{$:/core/images/preview-closed}}
   &lt;/$button&gt;
 \end
 
 \define button-filter-on()
-  &lt;$button action=&lt;&lt;action-filter-targets&gt;&gt;&gt;
+  &lt;$button class=&quot;tc-btn-invisible&quot;&gt;
     &lt;$action-listops $tiddler=&lt;&lt;stateTiddler&gt;&gt; $subfilter=&quot;-[all[current]]&quot;/&gt;
     {{$:/core/images/preview-open}}
   &lt;/$button&gt;
@@ -302,13 +302,17 @@ Error message and password prompt
     &lt;$list filter=&quot;[list&lt;stateTiddler&gt;match&lt;currentTiddler&gt;]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;button-filter-off&gt;&gt;&gt;&lt;&lt;button-filter-on&gt;&gt;&lt;/$list&gt;
 \end
 
+\define button-blank()
+  &lt;button class=&quot;tc-btn-invisible&quot; disabled&gt;{{$:/core/images/blank}}&lt;/button&gt;
+\end
+
 \define row()
     &lt;tr&gt;
       &lt;th&gt;&lt;$link to=&lt;&lt;target&gt;&gt;/&gt;&lt;/th&gt;
       &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
         &lt;td&gt;
           &lt;$list filter=&quot;[&lt;target&gt;links[]prefix&lt;property&gt;]&quot;&gt;
-            &lt;&lt;button-filter&gt;&gt;
+            &lt;$list filter=&quot;[all[current]match&lt;storyTiddler&gt;]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;button-filter&gt;&gt;&gt;&lt;&lt;button-blank&gt;&gt;&lt;/$list&gt;
             &lt;$link&gt;&lt;$text text={{{ [all[current]removeprefix&lt;property&gt;] }}}/&gt;&lt;/$link&gt;&lt;br&gt;
           &lt;/$list&gt;
         &lt;/td&gt;
@@ -9750,7 +9754,7 @@ Error message and password prompt
 <div created="20200823164638780" list="" modified="20200823164643818" title="$:/state/bimlas/property-comparison--1412917991">
 <pre></pre>
 </div>
-<div created="20200823191933650" list="" modified="20200823191934985" title="$:/state/bimlas/property-comparison--1840181478">
+<div created="20200823191933650" list="" modified="20200824101114302" title="$:/state/bimlas/property-comparison--1840181478">
 <pre></pre>
 </div>
 <div created="20200823164516395" list="" modified="20200823164523626" title="$:/state/bimlas/property-comparison--2081752039">
@@ -9768,7 +9772,7 @@ Error message and password prompt
 <div created="20200823162146632" list="" modified="20200823164422207" title="$:/state/bimlas/property-comparison-1142136315">
 <pre></pre>
 </div>
-<div created="20200823194740070" list="" modified="20200823194743670" title="$:/state/bimlas/property-comparison-1363983778">
+<div created="20200823194740070" list="" modified="20200824101807499" title="$:/state/bimlas/property-comparison-1363983778">
 <pre></pre>
 </div>
 <div created="20200823193903887" list="" modified="20200824101051228" title="$:/state/bimlas/property-comparison-1510390544">
@@ -9828,7 +9832,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824100147846" list="$:/bimlas/property-comparison Extinction [[Hamburger and Macaroni]] [[#ingredient: Beef]] [[#category: Recipe]] [[#ingredient: Milk]] [[#ingredient: Parsley]]" modified="20200824101053886" title="$:/StoryList">
+<div created="20200824100147846" list="$:/bimlas/property-comparison Extinction [[#genre: Alternative]] [[Hamburger and Macaroni]] [[#ingredient: Pepper]] [[#ingredient: Beef]] [[#category: Recipe]] [[#ingredient: Milk]] [[#ingredient: Parsley]]" modified="20200824101331900" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200823163618688" modified="20200823163715376" title="$:/temp/advancedsearch">
