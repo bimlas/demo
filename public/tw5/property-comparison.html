@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>#category:</li>
+
 <li>$:/bimlas/property-comparison</li>
 
 <li>$:/config/AutoSave</li>
@@ -285,7 +287,10 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200823121002163" modified="20200824160752671" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
+<div created="20200824161033790" modified="20200824161041281" tags="" title="#category:">
+<pre></pre>
+</div>
+<div created="20200823121002163" modified="20200824161215998" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
 <pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
 
 \define button-filter-off()
@@ -335,7 +340,7 @@ Error message and password prompt
       &lt;tr&gt;
         &lt;th&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;/th&gt;
         &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
-          &lt;th&gt;&lt;$text text=&lt;&lt;property&gt;&gt;/&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;$link to=&lt;&lt;property&gt;&gt;/&gt;&lt;/th&gt;
         &lt;/$list&gt;
       &lt;/tr&gt;
       &lt;$list filter=&quot;[all[current]backlinks[]]&quot; variable=&quot;target&quot;&gt;
@@ -347,8 +352,12 @@ Error message and password prompt
   &lt;/$vars&gt;
 \end
 
+\define view-property-values()
+  &lt;&lt;list-links filter:&quot;[all[tiddlers]links[]prefix&lt;currentTiddler&gt;]&quot;&gt;&gt;
+\end
+
 &lt;$list filter=&quot;[all[current]prefix[#]]&quot;&gt;
-  &lt;&lt;view-current-property&gt;&gt;
+  &lt;$list filter=&quot;[all[current]suffix[:]]&quot; emptyMessage=&lt;&lt;view-current-property&gt;&gt;&gt;&lt;&lt;view-property-values&gt;&gt;&lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
 <div created="20200824101058709" modified="20200824101058709" title="$:/config/AutoSave">
@@ -9846,7 +9855,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824160754398" list="$:/ControlPanel $:/bimlas/property-comparison Extinction [[#author: Audeka]] [[#author: Rawtekk]] [[Hamburger and Macaroni]]" modified="20200824160804301" title="$:/StoryList">
+<div created="20200824160754398" list="#category: [[#category: Recipe]] #ingredient: [[#ingredient: Pepper]] [[#category: Music]] $:/bimlas/property-comparison Extinction [[#author: Audeka]] #author: [[#author: The Dj Producer]] [[#author: Rawtekk]] [[Hamburger and Macaroni]]" modified="20200824161302166" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200823163618688" modified="20200823163715376" title="$:/temp/advancedsearch">
