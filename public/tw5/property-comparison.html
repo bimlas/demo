@@ -239,8 +239,6 @@ Error message and password prompt
 
 <li>Do You Know Squarepusher?</li>
 
-<li>Draft of '$:/bimlas/property-comparison'</li>
-
 <li>End of the Century</li>
 
 <li>Evolution</li>
@@ -281,7 +279,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200823121002163" modified="20200824100950361" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
+<div created="20200823121002163" modified="20200824101022577" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
 <pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
 
 \define button-filter-off()
@@ -314,7 +312,7 @@ BLANK
       &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
         &lt;td&gt;
           &lt;$list filter=&quot;[&lt;target&gt;links[]prefix&lt;property&gt;]&quot;&gt;
-            &lt;$list filter=&quot;[&lt;property&gt;match&lt;storyTiddler&gt;]&quot; variable=&quot;null&quot; emptyMessgae=&lt;&lt;button-filter&gt;&gt;&gt;&lt;&lt;button-blank&gt;&gt;&lt;/$list&gt;
+            &lt;&lt;button-filter&gt;&gt;
             &lt;$link&gt;&lt;$text text={{{ [all[current]removeprefix&lt;property&gt;] }}}/&gt;&lt;/$link&gt;&lt;br&gt;
           &lt;/$list&gt;
         &lt;/td&gt;
@@ -9831,7 +9829,7 @@ BLANK
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824100147846" list="[[Draft of '$:/bimlas/property-comparison']] Extinction [[Hamburger and Macaroni]] [[#ingredient: Beef]] [[#category: Recipe]] [[#ingredient: Milk]] [[#ingredient: Parsley]]" modified="20200824100215791" title="$:/StoryList">
+<div created="20200824100147846" list="$:/bimlas/property-comparison Extinction [[Hamburger and Macaroni]] [[#ingredient: Beef]] [[#category: Recipe]] [[#ingredient: Milk]] [[#ingredient: Parsley]]" modified="20200824100215791" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200823163618688" modified="20200823163715376" title="$:/temp/advancedsearch">
@@ -10061,70 +10059,6 @@ time to make 3½ hours 30 min prep
 * [[#genre: Electronic]]
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/rYS8edMRgBg&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;</pre>
-</div>
-<div created="20200823121002163" draft.of="$:/bimlas/property-comparison" draft.title="$:/bimlas/property-comparison" modified="20200824101013505" tags="$:/tags/ViewTemplate" title="Draft of '$:/bimlas/property-comparison'">
-<pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
-
-\define button-filter-off()
-  &lt;$button&gt;
-    &lt;$action-listops $tiddler=&lt;&lt;stateTiddler&gt;&gt; $subfilter=&quot;[all[current]]&quot;/&gt;
-    {{$:/core/images/preview-closed}}
-  &lt;/$button&gt;
-\end
-
-\define button-filter-on()
-  &lt;$button action=&lt;&lt;action-filter-targets&gt;&gt;&gt;
-    &lt;$action-listops $tiddler=&lt;&lt;stateTiddler&gt;&gt; $subfilter=&quot;-[all[current]]&quot;/&gt;
-    {{$:/core/images/preview-open}}
-  &lt;/$button&gt;
-\end
-
-\define button-filter()
-FILT
-    &lt;$list filter=&quot;[list&lt;stateTiddler&gt;match&lt;currentTiddler&gt;]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;button-filter-off&gt;&gt;&gt;&lt;&lt;button-filter-on&gt;&gt;&lt;/$list&gt;
-\end
-
-\define button-blank()
-BLANK
-  &lt;$button disabled&gt;{{$:/core/images/blank}}&lt;/$button&gt;
-\end
-
-\define row()
-    &lt;tr&gt;
-      &lt;th&gt;&lt;$link to=&lt;&lt;target&gt;&gt;/&gt;&lt;/th&gt;
-      &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
-        &lt;td&gt;
-          &lt;$list filter=&quot;[&lt;target&gt;links[]prefix&lt;property&gt;]&quot;&gt;
-            &lt;&lt;button-filter&gt;&gt;
-            &lt;$link&gt;&lt;$text text={{{ [all[current]removeprefix&lt;property&gt;] }}}/&gt;&lt;/$link&gt;&lt;br&gt;
-          &lt;/$list&gt;
-        &lt;/td&gt;
-      &lt;/$list&gt;
-    &lt;/tr&gt;
-\end
-
-\define row-filtered()
-      &lt;$list filter=&quot;[list&lt;stateTiddler&gt;] -[&lt;target&gt;links[]] -[[]]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;row&gt;&gt;&gt;
-      &lt;/$list&gt;
-\end
-
-&lt;$list filter=&quot;[all[current]prefix[#]]&quot;&gt;
-&lt;$vars stateTiddler=&lt;&lt;qualify &quot;$:/state/bimlas/property-comparison&quot;&gt;&gt;&gt;
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;&lt;/th&gt;
-    &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
-      &lt;th&gt;&lt;$text text=&lt;&lt;property&gt;&gt;/&gt;&lt;/th&gt;
-    &lt;/$list&gt;
-  &lt;/tr&gt;
-  &lt;$list filter=&quot;[all[current]backlinks[]]&quot; variable=&quot;target&quot;&gt;
-    &lt;$list filter=&quot;[list&lt;stateTiddler&gt;first[]] -[[]]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;row&gt;&gt;&gt;
-      &lt;&lt;row-filtered&gt;&gt;
-    &lt;/$list&gt;
-  &lt;/$list&gt;
-&lt;/table&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;</pre>
 </div>
 <div bag="default" created="20191212214216126" modified="20200823173810139" revision="0" title="End of the Century" type="text/vnd.tiddlywiki">
 <pre>* [[#category: Music]]
