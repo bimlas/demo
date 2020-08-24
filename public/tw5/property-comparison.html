@@ -205,6 +205,8 @@ Error message and password prompt
 
 <li>$:/bimlas/property-comparison</li>
 
+<li>$:/bimlas/property-search</li>
+
 <li>$:/bimlas/publish-filter</li>
 
 <li>$:/bimlas/splash-screen/template</li>
@@ -266,6 +268,8 @@ Error message and password prompt
 <li>Johnny Marzetti</li>
 
 <li>One shy morning</li>
+
+<li>README</li>
 
 <li>Reminder</li>
 
@@ -388,6 +392,15 @@ Error message and password prompt
 &lt;$list filter=&quot;[all[current]prefix[#]]&quot;&gt;
   &lt;$list filter=&quot;[all[current]suffix[:]]&quot; emptyMessage=&lt;&lt;view-current-property&gt;&gt;&gt;&lt;&lt;view-property-values&gt;&gt;&lt;/$list&gt;
 &lt;/$list&gt;</pre>
+</div>
+<div caption="Property" created="20200824174606395" modified="20200824174926260" tags="$:/tags/SearchResults" title="$:/bimlas/property-search">
+<pre>\define searchResultList()
+//&lt;small&gt;Properties&lt;/small&gt;//
+
+&lt;$list filter=&quot;[all[tiddlers+missing]search:title{$(searchTiddler)$}sort[title]limit[250]]&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
+
+\end
+&lt;&lt;searchResultList&gt;&gt;</pre>
 </div>
 <div created="20200221071312621" modified="20200629054807425" origin="https://groups.google.com/d/msg/tiddlywiki/ND6fEBAmxDw/sp0KfkiICAAJ" tags="$:/tags/Macro" title="$:/bimlas/publish-filter">
 <pre>\define publishFilter() -[prefix[$:/temp]] -[prefix[$:/state]] -[[$:/_sq/Stories/Story2StoryList]] -[[$:/_sq/Stories/Story2HistoryList]]
@@ -9846,8 +9859,8 @@ please wait
     }
 }</pre>
 </div>
-<div created="20200823193124461" modified="20200824090654252" title="$:/DefaultTiddlers">
-<pre>[[$:/bimlas/property-comparison]]
+<div created="20200823193124461" modified="20200824175555720" title="$:/DefaultTiddlers">
+<pre>[[README]]
 [[Extinction]]
 [[Hamburger and Macaroni]]</pre>
 </div>
@@ -9886,7 +9899,7 @@ please wait
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824164736990" list="$:/bimlas/property-comparison Extinction [[#genre: Drum &amp; Bass]] [[#author: Leon Switch]] #genre: [[#genre: Country]] #category: [[#category: Music]] Haw [[#genre: Alternative]] [[#album: Long Stories]] [[Hamburger and Macaroni]]" modified="20200824164944294" title="$:/StoryList">
+<div list="README Extinction [[Hamburger and Macaroni]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22">
@@ -10164,6 +10177,13 @@ Sodium	1667mg	69%</pre>
 * [[#genre: Alternative]]
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/EfzQ5BGCCVs&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;</pre>
+</div>
+<div created="20200824175009680" modified="20200824175540879" tags="" title="README">
+<pre>Open any of the links in the tiddlers below to see a table of other properties related to the property (via [[$:/bimlas/property-comparison]] view template). Use the standard search &quot;Property&quot; tab to search for properties (via [[$:/bimlas/property-search]] search tab).
+
+Place arbitrary property links in any tiddler: the link has be in the form `[[#PROPERTY NAME: PROPERTY VALUE`]], for example [[#example: Property]]. Place the same and different properties in other tiddlers as well and click on one of the properties.
+
+See https://groups.google.com/g/tiddlywiki/c/Re11x96t-qI/m/WoqDEuJzGQAJ for details.</pre>
 </div>
 <div bag="default" created="20200207221837501" modified="20200823191352941" revision="0" title="Reminder" type="text/vnd.tiddlywiki">
 <pre>* [[#category: Music]]
