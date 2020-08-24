@@ -393,11 +393,11 @@ Error message and password prompt
   &lt;$list filter=&quot;[all[current]suffix[:]]&quot; emptyMessage=&lt;&lt;view-current-property&gt;&gt;&gt;&lt;&lt;view-property-values&gt;&gt;&lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div caption="Property" created="20200824174606395" modified="20200824174926260" tags="$:/tags/SearchResults" title="$:/bimlas/property-search">
+<div caption="Property" created="20200824174606395" modified="20200824201454260" tags="$:/tags/SearchResults" title="$:/bimlas/property-search">
 <pre>\define searchResultList()
 //&lt;small&gt;Properties&lt;/small&gt;//
 
-&lt;$list filter=&quot;[all[tiddlers+missing]search:title{$(searchTiddler)$}sort[title]limit[250]]&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
+&lt;$list filter=&quot;[all[tiddlers+missing]prefix[#]search:title{$(searchTiddler)$}sort[title]limit[250]]&quot; template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
 
 \end
 &lt;&lt;searchResultList&gt;&gt;</pre>
@@ -9899,7 +9899,7 @@ please wait
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824175843129" list="README Extinction [[Hamburger and Macaroni]]" modified="20200824175847610" title="$:/StoryList">
+<div created="20200824201438797" list="README $:/bimlas/property-search Extinction [[Hamburger and Macaroni]]" modified="20200824201438797" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22">
