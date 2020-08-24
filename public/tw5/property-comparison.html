@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>Demo of metadata links and property comparison table — a non-linear personal web notebook</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -151,9 +151,19 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/GitLab/Filename</li>
+
+<li>$:/GitLab/Path</li>
+
+<li>$:/GitLab/Repo</li>
+
+<li>$:/GitLab/Username</li>
+
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/state/bimlas/property-comparison--1412917991</li>
 
@@ -182,6 +192,8 @@ Error message and password prompt
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-2065006209</li>
 
 <li>$:/state/tab/moresidebar-1850697562</li>
 
@@ -9704,10 +9716,22 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200823193124461" modified="20200823193124462" title="$:/DefaultTiddlers">
+<div created="20200823193124461" modified="20200824090654252" title="$:/DefaultTiddlers">
 <pre>[[$:/bimlas/property-comparison]]
-[[#category: Music]]
-[[#category: Recipe]]</pre>
+[[Extinction]]
+[[Hamburger and Macaroni]]</pre>
+</div>
+<div created="20200824090619754" modified="20200824090627018" title="$:/GitLab/Filename">
+<pre>property-comparison.html</pre>
+</div>
+<div created="20200824090616466" modified="20200824090617634" title="$:/GitLab/Path">
+<pre>/tw5/</pre>
+</div>
+<div created="20200824090607723" modified="20200824090614554" title="$:/GitLab/Repo">
+<pre>bimlas/demo</pre>
+</div>
+<div created="20200824090605296" modified="20200824090605296" title="$:/GitLab/Username">
+<pre>bimlas</pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
@@ -9727,6 +9751,9 @@ Error message and password prompt
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div created="20200824090714315" modified="20200824090729506" title="$:/SiteTitle">
+<pre>Demo of metadata links and property comparison table</pre>
 </div>
 <div created="20200823164638780" list="" modified="20200823164643818" title="$:/state/bimlas/property-comparison--1412917991">
 <pre></pre>
@@ -9767,8 +9794,11 @@ Error message and password prompt
 <div created="20200823183853292" modified="20200823194612812" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
-<div created="20200823183851848" modified="20200823194622090" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20200823183851848" modified="20200824090632338" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
+</div>
+<div created="20200824090604965" modified="20200824090604965" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/GitLab</pre>
 </div>
 <div created="20200823153528999" modified="20200823153528999" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
@@ -9806,7 +9836,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200823195340550" list="[[Crockpot Macaroni &amp; Cheese]] $:/bimlas/property-comparison [[#category: Music]] [[#category: Recipe]]" modified="20200823195340550" title="$:/StoryList">
+<div created="20200824090603152" list="$:/ControlPanel $:/bimlas/property-comparison [[#category: Music]] [[#category: Recipe]]" modified="20200824090603152" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200823163618688" modified="20200823163715376" title="$:/temp/advancedsearch">
@@ -9825,19 +9855,19 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///media/bimlas/cuccok/download/property-comparison.html&quot;
+            &quot;text&quot;: &quot;https://bimlas.gitlab.io/demo/tw5/property-comparison.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9845,7 +9875,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/media/bimlas/cuccok/download/property-comparison.html&quot;
+            &quot;text&quot;: &quot;/demo/tw5/property-comparison.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9853,7 +9883,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;https://bimlas.gitlab.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
