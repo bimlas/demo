@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>$:/state/bimlas/property-comparison-1510390544</li>
 
+<li>$:/state/bimlas/property-comparison-883817268</li>
+
 <li>$:/state/bimlas/property-comparison-886567097</li>
 
 <li>$:/state/tab--1322832210</li>
@@ -287,7 +289,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20200823121002163" modified="20200824162018810" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
+<div created="20200823121002163" modified="20200824163924022" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
 <pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
 
 \define button-filter-off()
@@ -312,7 +314,7 @@ Error message and password prompt
   &lt;button class=&quot;tc-btn-invisible&quot; disabled&gt;{{$:/core/images/blank}}&lt;/button&gt;
 \end
 
-\define row()
+\define table-row()
   &lt;tr&gt;
     &lt;th&gt;&lt;$link to=&lt;&lt;target&gt;&gt;/&gt;&lt;/th&gt;
     &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
@@ -326,28 +328,31 @@ Error message and password prompt
   &lt;/tr&gt;
 \end
 
-\define row-filtered()
-  &lt;$list filter=&quot;[list&lt;stateTiddler&gt;] -[&lt;target&gt;links[]] -[[]]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;row&gt;&gt;&gt;
-  &lt;/$list&gt;
+\define table-row-filtered()
+  &lt;$list filter=&quot;[list&lt;stateTiddler&gt;] -[&lt;target&gt;links[]] -[[]]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;table-row&gt;&gt;&gt;&lt;/$list&gt;
+\end
+
+\define table-header()
+  &lt;tr&gt;
+    &lt;th&gt;
+      &lt;$list filter=&quot;[all[current]splitbefore[:]]&quot; variable=&quot;property&quot;&gt;
+        &lt;$link to=&lt;&lt;property&gt;&gt;/&gt;&lt;br&gt;
+        &lt;$text text={{{ [all[current]removeprefix&lt;property&gt;] }}}/&gt;
+      &lt;/$list&gt;
+    &lt;/th&gt;
+    &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
+      &lt;th&gt;&lt;$link to=&lt;&lt;property&gt;&gt;/&gt;&lt;/th&gt;
+    &lt;/$list&gt;
+  &lt;/tr&gt;
 \end
 
 \define view-current-property()
   &lt;$vars stateTiddler=&lt;&lt;qualify &quot;$:/state/bimlas/property-comparison&quot;&gt;&gt;&gt;
     &lt;table&gt;
-      &lt;tr&gt;
-        &lt;th&gt;
-          &lt;$list filter=&quot;[all[current]splitbefore[:]]&quot; variable=&quot;property&quot;&gt;
-            &lt;$link to=&lt;&lt;property&gt;&gt;/&gt;&lt;br&gt;
-            &lt;$text text={{{ [all[current]removeprefix&lt;property&gt;] }}}/&gt;
-          &lt;/$list&gt;
-        &lt;/th&gt;
-        &lt;$list filter=&lt;&lt;filter-related-properties&gt;&gt; variable=&quot;property&quot;&gt;
-          &lt;th&gt;&lt;$link to=&lt;&lt;property&gt;&gt;/&gt;&lt;/th&gt;
-        &lt;/$list&gt;
-      &lt;/tr&gt;
+      &lt;&lt;table-header&gt;&gt;
       &lt;$list filter=&quot;[all[current]backlinks[]]&quot; variable=&quot;target&quot;&gt;
-        &lt;$list filter=&quot;[list&lt;stateTiddler&gt;first[]] -[[]]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;row&gt;&gt;&gt;
-          &lt;&lt;row-filtered&gt;&gt;
+        &lt;$list filter=&quot;[list&lt;stateTiddler&gt;first[]] -[[]]&quot; variable=&quot;null&quot; emptyMessage=&lt;&lt;table-row&gt;&gt;&gt;
+          &lt;&lt;table-row-filtered&gt;&gt;
         &lt;/$list&gt;
       &lt;/$list&gt;
     &lt;/table&gt;
@@ -9773,7 +9778,7 @@ Error message and password prompt
 <div created="20200823164638780" list="" modified="20200823164643818" title="$:/state/bimlas/property-comparison--1412917991">
 <pre></pre>
 </div>
-<div created="20200824160755962" list="" modified="20200824160756292" title="$:/state/bimlas/property-comparison--1765360686">
+<div created="20200824160755962" list="" modified="20200824163836705" title="$:/state/bimlas/property-comparison--1765360686">
 <pre></pre>
 </div>
 <div created="20200824160758424" list="" modified="20200824160759235" title="$:/state/bimlas/property-comparison--181988422">
@@ -9788,13 +9793,13 @@ Error message and password prompt
 <div created="20200823164516395" list="" modified="20200823164523626" title="$:/state/bimlas/property-comparison--2081752039">
 <pre></pre>
 </div>
-<div created="20200823192026968" list="" modified="20200823192027547" title="$:/state/bimlas/property-comparison--721535826">
+<div created="20200823192026968" list="[[#genre: Neuro]]" modified="20200824163720004" title="$:/state/bimlas/property-comparison--721535826">
 <pre></pre>
 </div>
 <div created="20200823191857108" list="" modified="20200823191859601" title="$:/state/bimlas/property-comparison--873261830">
 <pre></pre>
 </div>
-<div created="20200823192638683" list="" modified="20200823194604960" title="$:/state/bimlas/property-comparison-1086527550">
+<div created="20200823192638683" list="" modified="20200824163936240" title="$:/state/bimlas/property-comparison-1086527550">
 <pre></pre>
 </div>
 <div created="20200823162146632" list="" modified="20200823164422207" title="$:/state/bimlas/property-comparison-1142136315">
@@ -9804,6 +9809,9 @@ Error message and password prompt
 <pre></pre>
 </div>
 <div created="20200823193903887" list="" modified="20200824101051228" title="$:/state/bimlas/property-comparison-1510390544">
+<pre></pre>
+</div>
+<div created="20200824163710298" list="[[#genre: Alternative]]" modified="20200824163710298" title="$:/state/bimlas/property-comparison-883817268">
 <pre></pre>
 </div>
 <div created="20200823161948111" list="" modified="20200823164604783" title="$:/state/bimlas/property-comparison-886567097">
@@ -9860,7 +9868,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824160754398" list="[[#category: Recipe]] #category: #ingredient: [[#ingredient: Parsley]] [[#ingredient: Tomato]] [[#ingredient: Pepper]] [[#category: Music]] [[#author: Lulu Rouge]] #album: [[#album: Here's To Them]] $:/bimlas/property-comparison Extinction [[#author: Audeka]] #author: [[#author: The Dj Producer]] [[#author: Rawtekk]] [[Hamburger and Macaroni]] [[#ingredient: Beef]]" modified="20200824162153043" title="$:/StoryList">
+<div created="20200824163333043" list="$:/bimlas/property-comparison Extinction [[#author: Audeka]] #author: [[#author: Hidden Orchestra]] #category: [[#category: Recipe]] #album: [[#album: Here's To Them]] [[#album: Sixteen Horsepower]] [[#author: 16 Horsepower]] [[#genre: Country]] #genre: [[#genre: Drum &amp; Bass]] [[Hamburger and Macaroni]]" modified="20200824163933334" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20200823163618688" modified="20200823163715376" title="$:/temp/advancedsearch">
