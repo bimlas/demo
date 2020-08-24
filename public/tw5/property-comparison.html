@@ -57,7 +57,67 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 </head>
 <body class="tc-body">
 <!--~~ Raw markup for the top of the body section ~~-->
-
+<div class="tc-remove-when-wiki-loaded"><style scoped>
+#splashcontainer {
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}#spinner {
+    width: 180px;
+    height: 180px;
+    border: 15px solid transparent;
+    border-top: 15px solid #586e75;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}#logo {
+    width: 180px;
+    height: 180px;
+    animation: spinreverse 2s linear infinite;
+}#message {
+    text-align: center;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spinreverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+</style><div id="splashcontainer">
+<div id="spinner">
+<div id="logo"><?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 112 112" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<circle cx="56" cy="56" r="55.685" fill="#fdf6e3"/>
+<path d="m55.967 6.1c-14.857 0-26.9 11.646-26.9 26 0 10.387 10.245 20.339 13.366 22.833l-5.233 6.4c-5.127 5.913-8.085 12.576-8.133 18.567 0 6.253 2.313 11.982 6.133 16.466-2.17 3.57-5.8 9.534-5.8 9.534l6.833-8.334c4.928 5.132 11.994 8.334 19.8 8.334 14.857 0 26.9-11.647 26.9-26 0-9.83-10.032-19.228-13.8-22.334l5.667-6.9c5.127-5.913 8.085-12.576 8.133-18.566 0-6.254-2.313-11.983-6.133-16.467 2.17-3.57 5.8-9.533 5.8-9.533l-6.833 8.333c-4.928-5.132-11.994-8.333-19.8-8.333zm0 1.066c8.294 0 12.084 7.653 13.8 14.534l-24.267 29.533c-4.871-6.507-5-17.477-5-19.133 0-2.08 1.15-24.934 15.467-24.934zm14.633 18.667c0.495 3.197 0.567 5.736 0.567 6.4-1.021 11.422-8.962 20.563-12.6 26.267-4.402 6.917-11.225 17.953-17.167 27.666-0.495-3.197-0.567-5.735-0.567-6.4 1.021-11.422 8.962-20.563 12.6-26.266 4.402-6.917 11.225-17.954 17.167-27.667zm-4.467 35.367c4.317 6.62 5.367 17.122 5.367 18.7 0 2.079-1.15 24.933-15.467 24.933-8.294 0-12.084-7.652-13.8-14.533z" fill="#657b83" font-weight="400" overflow="visible" style="text-decoration-line:none;text-indent:0;text-transform:none"/>
+</svg>
+</div>
+</div>
+<div id="message">
+LOADING<br>
+please wait
+</div>
+</div></div>
 <!--~~ Static styles ~~-->
 <div id="styleArea">
 <style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" type="text/css">/*
@@ -141,13 +201,21 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/bimlas/logo.svg</li>
+
 <li>$:/bimlas/property-comparison</li>
+
+<li>$:/bimlas/publish-filter</li>
+
+<li>$:/bimlas/splash-screen/template</li>
 
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/NewJournal/Text</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
+
+<li>$:/config/WikiParserRules/Inline/wikilink</li>
 
 <li>$:/core</li>
 
@@ -161,89 +229,25 @@ Error message and password prompt
 
 <li>$:/GitLab/Username</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/bimlas/property-comparison--1412917991</li>
-
-<li>$:/state/bimlas/property-comparison--1765360686</li>
-
-<li>$:/state/bimlas/property-comparison--181988422</li>
-
-<li>$:/state/bimlas/property-comparison--1840181478</li>
-
-<li>$:/state/bimlas/property-comparison--203281332</li>
-
-<li>$:/state/bimlas/property-comparison--2081752039</li>
-
-<li>$:/state/bimlas/property-comparison--721535826</li>
-
-<li>$:/state/bimlas/property-comparison--873261830</li>
-
-<li>$:/state/bimlas/property-comparison-1086527550</li>
-
-<li>$:/state/bimlas/property-comparison-1142136315</li>
-
-<li>$:/state/bimlas/property-comparison-1363983778</li>
-
-<li>$:/state/bimlas/property-comparison-1510390544</li>
-
-<li>$:/state/bimlas/property-comparison-883817268</li>
-
-<li>$:/state/bimlas/property-comparison-886567097</li>
-
-<li>$:/state/tab--1322832210</li>
-
-<li>$:/state/tab--1498284803</li>
-
-<li>$:/state/tab--1963855381</li>
-
-<li>$:/state/tab-1749438307</li>
-
-<li>$:/state/tab-2065006209</li>
-
-<li>$:/state/tab/moresidebar-1850697562</li>
-
-<li>$:/state/tab/sidebar--595412856</li>
-
-<li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
-
-<li>$:/state/tree/$:/bimlas/</li>
-
-<li>$:/state/tree/$:/boot/</li>
-
-<li>$:/state/tree/$:/state/</li>
-
-<li>$:/state/tree/$:/state/bimlas/</li>
-
-<li>$:/state/tree/$:/state/bimlas/property-comparison/</li>
-
-<li>$:/state/tree/$:/state/bimlas/property-comparison/#Platform: Linux/</li>
-
-<li>$:/state/tree/$:/state/bimlas/property-comparison/#Platform: Windows/</li>
-
-<li>$:/state/tree/$:/state/bimlas/property-comparison/#Style: Fantasy/</li>
-
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
-
-<li>$:/temp/advancedsearch</li>
-
-<li>$:/temp/info-plugin</li>
-
-<li>$:/temp/NewTagName</li>
-
-<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
+
+<li>$:/themes/tiddlywiki/vanilla/options/stickytitles</li>
 
 <li>Crockpot Macaroni &amp; Cheese</li>
 
@@ -289,6 +293,23 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20200808213428803" modified="20200808213433307" tags="Kép" title="$:/bimlas/logo.svg" type="image/svg+xml">
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg version=&quot;1.1&quot; viewBox=&quot;0 0 112 112&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+&lt;metadata&gt;
+&lt;rdf:RDF&gt;
+&lt;cc:Work rdf:about=&quot;&quot;&gt;
+&lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+&lt;dc:type rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot;/&gt;
+&lt;dc:title/&gt;
+&lt;/cc:Work&gt;
+&lt;/rdf:RDF&gt;
+&lt;/metadata&gt;
+&lt;circle cx=&quot;56&quot; cy=&quot;56&quot; r=&quot;55.685&quot; fill=&quot;#fdf6e3&quot;/&gt;
+&lt;path d=&quot;m55.967 6.1c-14.857 0-26.9 11.646-26.9 26 0 10.387 10.245 20.339 13.366 22.833l-5.233 6.4c-5.127 5.913-8.085 12.576-8.133 18.567 0 6.253 2.313 11.982 6.133 16.466-2.17 3.57-5.8 9.534-5.8 9.534l6.833-8.334c4.928 5.132 11.994 8.334 19.8 8.334 14.857 0 26.9-11.647 26.9-26 0-9.83-10.032-19.228-13.8-22.334l5.667-6.9c5.127-5.913 8.085-12.576 8.133-18.566 0-6.254-2.313-11.983-6.133-16.467 2.17-3.57 5.8-9.533 5.8-9.533l-6.833 8.333c-4.928-5.132-11.994-8.333-19.8-8.333zm0 1.066c8.294 0 12.084 7.653 13.8 14.534l-24.267 29.533c-4.871-6.507-5-17.477-5-19.133 0-2.08 1.15-24.934 15.467-24.934zm14.633 18.667c0.495 3.197 0.567 5.736 0.567 6.4-1.021 11.422-8.962 20.563-12.6 26.267-4.402 6.917-11.225 17.953-17.167 27.666-0.495-3.197-0.567-5.735-0.567-6.4 1.021-11.422 8.962-20.563 12.6-26.266 4.402-6.917 11.225-17.954 17.167-27.667zm-4.467 35.367c4.317 6.62 5.367 17.122 5.367 18.7 0 2.079-1.15 24.933-15.467 24.933-8.294 0-12.084-7.652-13.8-14.533z&quot; fill=&quot;#657b83&quot; font-weight=&quot;400&quot; overflow=&quot;visible&quot; style=&quot;text-decoration-line:none;text-indent:0;text-transform:none&quot;/&gt;
+&lt;/svg&gt;
+</pre>
+</div>
 <div created="20200823121002163" modified="20200824163924022" tags="$:/tags/ViewTemplate" title="$:/bimlas/property-comparison">
 <pre>\define filter-related-properties() [all[current]backlinks[]links[]!is[current]prefix[#]splitbefore[:]]
 
@@ -367,7 +388,79 @@ Error message and password prompt
   &lt;$list filter=&quot;[all[current]suffix[:]]&quot; emptyMessage=&lt;&lt;view-current-property&gt;&gt;&gt;&lt;&lt;view-property-values&gt;&gt;&lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20200824101058709" modified="20200824101058709" title="$:/config/AutoSave">
+<div created="20200221071312621" modified="20200629054807425" origin="https://groups.google.com/d/msg/tiddlywiki/ND6fEBAmxDw/sp0KfkiICAAJ" tags="$:/tags/Macro" title="$:/bimlas/publish-filter">
+<pre>\define publishFilter() -[prefix[$:/temp]] -[prefix[$:/state]] -[[$:/_sq/Stories/Story2StoryList]] -[[$:/_sq/Stories/Story2HistoryList]]
+
+Do not save `$:/temp/` and `$:/state/` tiddlers, open the wiki with initial view.
+
+Needs [[TiddlyWiki &gt;= 5.1.22|https://groups.google.com/d/msg/tiddlywiki/ND6fEBAmxDw/vzgTbX2QCAAJ]]!</pre>
+</div>
+<div bag="default" created="20180831203633930" modified="20200525144807201" revision="0" tags="$:/tags/RawMarkupWikified/TopBody" title="$:/bimlas/splash-screen/template" type="text/vnd.tiddlywiki">
+<pre>\rules only filteredtranscludeinline transcludeinline
+
+&lt;div class=&quot;tc-remove-when-wiki-loaded&quot;&gt;
+
+&lt;style scoped&gt;
+#splashcontainer {
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#spinner {
+    width: 180px;
+    height: 180px;
+    border: 15px solid transparent;
+    border-top: 15px solid #586e75;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+#logo {
+    width: 180px;
+    height: 180px;
+    animation: spinreverse 2s linear infinite;
+}
+
+#message {
+    text-align: center;
+    font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spinreverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+&lt;/style&gt;
+
+&lt;div id=&quot;splashcontainer&quot;&gt;
+&lt;div id=&quot;spinner&quot;&gt;
+&lt;div id=&quot;logo&quot;&gt;{{$:/bimlas/logo.svg||$:/core/templates/plain-text-tiddler}}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;message&quot;&gt;
+LOADING&lt;br&gt;
+please wait
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+</div>
+<div created="20200428074308085" modified="20200428074308085" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
 <div created="20200823193023857" modified="20200823193120243" title="$:/config/NewJournal/Text">
@@ -375,6 +468,9 @@ Error message and password prompt
 </div>
 <div created="20200823194616039" modified="20200823194616039" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
+</div>
+<div bag="default" created="20181025185452647" modified="20181025185454188" revision="0" title="$:/config/WikiParserRules/Inline/wikilink" type="text/vnd.tiddlywiki">
+<pre>disable</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22">
 <pre>{
@@ -9766,6 +9862,17 @@ Error message and password prompt
 <div created="20200824090605296" modified="20200824090605296" title="$:/GitLab/Username">
 <pre>bimlas</pre>
 </div>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[$:/bimlas/logo.svg]]
+# [[$:/bimlas/splash-screen/template]]
+# [[$:/themes/tiddlywiki/vanilla/options/sidebarlayout]]
+# [[$:/themes/tiddlywiki/vanilla/options/stickytitles]]
+# [[$:/config/WikiParserRules/Inline/wikilink]]
+# [[$:/bimlas/publish-filter]]
+# [[$:/config/AutoSave]]</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -9775,167 +9882,10 @@ Error message and password prompt
 <div created="20200824090714315" modified="20200824090729506" title="$:/SiteTitle">
 <pre>Demo of metadata links and property comparison table</pre>
 </div>
-<div created="20200823164638780" list="" modified="20200823164643818" title="$:/state/bimlas/property-comparison--1412917991">
-<pre></pre>
-</div>
-<div created="20200824160755962" list="" modified="20200824163836705" title="$:/state/bimlas/property-comparison--1765360686">
-<pre></pre>
-</div>
-<div created="20200824160758424" list="" modified="20200824160759235" title="$:/state/bimlas/property-comparison--181988422">
-<pre></pre>
-</div>
-<div created="20200823191933650" list="" modified="20200824101114302" title="$:/state/bimlas/property-comparison--1840181478">
-<pre></pre>
-</div>
-<div created="20200824162056335" list="" modified="20200824162100990" title="$:/state/bimlas/property-comparison--203281332">
-<pre></pre>
-</div>
-<div created="20200823164516395" list="" modified="20200823164523626" title="$:/state/bimlas/property-comparison--2081752039">
-<pre></pre>
-</div>
-<div created="20200823192026968" list="[[#genre: Neuro]]" modified="20200824163720004" title="$:/state/bimlas/property-comparison--721535826">
-<pre></pre>
-</div>
-<div created="20200823191857108" list="" modified="20200823191859601" title="$:/state/bimlas/property-comparison--873261830">
-<pre></pre>
-</div>
-<div created="20200823192638683" list="" modified="20200824163936240" title="$:/state/bimlas/property-comparison-1086527550">
-<pre></pre>
-</div>
-<div created="20200823162146632" list="" modified="20200823164422207" title="$:/state/bimlas/property-comparison-1142136315">
-<pre></pre>
-</div>
-<div created="20200823194740070" list="" modified="20200824101807499" title="$:/state/bimlas/property-comparison-1363983778">
-<pre></pre>
-</div>
-<div created="20200823193903887" list="" modified="20200824101051228" title="$:/state/bimlas/property-comparison-1510390544">
-<pre></pre>
-</div>
-<div created="20200824163710298" list="[[#genre: Alternative]]" modified="20200824163710298" title="$:/state/bimlas/property-comparison-883817268">
-<pre></pre>
-</div>
-<div created="20200823161948111" list="" modified="20200823164604783" title="$:/state/bimlas/property-comparison-886567097">
-<pre></pre>
-</div>
-<div created="20200823194637442" modified="20200823194637442" title="$:/state/tab--1322832210">
-<pre>$:/core/ui/TiddlerInfo/References</pre>
-</div>
-<div created="20200823163616733" modified="20200823163616733" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
-</div>
-<div created="20200823183853292" modified="20200823194612812" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Toolbars</pre>
-</div>
-<div created="20200823183851848" modified="20200824101055514" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
-</div>
-<div created="20200824090604965" modified="20200824160806316" title="$:/state/tab-2065006209">
-<pre>$:/core/ui/ControlPanel/Saving/GitLab</pre>
-</div>
-<div created="20200823153528999" modified="20200823153528999" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/Explorer</pre>
-</div>
-<div created="20200823133347822" modified="20200824100237705" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
-</div>
-<div created="20200823194615024" modified="20200823194615024" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
-</div>
-<div created="20200823173217361" modified="20200823173217361" title="$:/state/tree/$:/bimlas/">
-<pre>show</pre>
-</div>
-<div created="20200823173216800" modified="20200823173218262" title="$:/state/tree/$:/boot/">
-<pre>hide</pre>
-</div>
-<div created="20200823153530419" modified="20200823165205239" title="$:/state/tree/$:/state/">
-<pre>hide</pre>
-</div>
-<div created="20200823153531957" modified="20200823153531957" title="$:/state/tree/$:/state/bimlas/">
-<pre>show</pre>
-</div>
-<div created="20200823153532862" modified="20200823153532862" title="$:/state/tree/$:/state/bimlas/property-comparison/">
-<pre>show</pre>
-</div>
-<div created="20200823153555268" modified="20200823153555268" title="$:/state/tree/$:/state/bimlas/property-comparison/#Platform: Linux/">
-<pre>show</pre>
-</div>
-<div created="20200823153706211" modified="20200823153706211" title="$:/state/tree/$:/state/bimlas/property-comparison/#Platform: Windows/">
-<pre>show</pre>
-</div>
-<div created="20200823153730777" modified="20200823153730777" title="$:/state/tree/$:/state/bimlas/property-comparison/#Style: Fantasy/">
-<pre>show</pre>
-</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200824163333043" list="$:/bimlas/property-comparison Extinction [[#author: Audeka]] #author: [[#author: Hidden Orchestra]] #category: [[#category: Recipe]] #album: [[#album: Here's To Them]] [[#album: Sixteen Horsepower]] [[#author: 16 Horsepower]] [[#genre: Country]] #genre: [[#genre: Drum &amp; Bass]] [[Hamburger and Macaroni]]" modified="20200824163933334" title="$:/StoryList">
-<pre></pre>
-</div>
-<div created="20200823163618688" modified="20200823163715376" title="$:/temp/advancedsearch">
-<pre>[[$:/state/bimlas/property-comparison-886567097]list[]]</pre>
-</div>
-<div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/info/browser&quot;: {
-            &quot;title&quot;: &quot;$:/info/browser&quot;,
-            &quot;text&quot;: &quot;yes&quot;
-        },
-        &quot;$:/info/node&quot;: {
-            &quot;title&quot;: &quot;$:/info/node&quot;,
-            &quot;text&quot;: &quot;no&quot;
-        },
-        &quot;$:/info/url/full&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://bimlas.gitlab.io/demo/tw5/property-comparison.html&quot;
-        },
-        &quot;$:/info/url/host&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
-        },
-        &quot;$:/info/url/hostname&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
-        },
-        &quot;$:/info/url/protocol&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;https:&quot;
-        },
-        &quot;$:/info/url/port&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/port&quot;,
-            &quot;text&quot;: &quot;&quot;
-        },
-        &quot;$:/info/url/pathname&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/demo/tw5/property-comparison.html&quot;
-        },
-        &quot;$:/info/url/search&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/search&quot;,
-            &quot;text&quot;: &quot;&quot;
-        },
-        &quot;$:/info/url/origin&quot;: {
-            &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://bimlas.gitlab.io&quot;
-        },
-        &quot;$:/info/browser/screen/width&quot;: {
-            &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
-        },
-        &quot;$:/info/browser/screen/height&quot;: {
-            &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
-        },
-        &quot;$:/info/browser/language&quot;: {
-            &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;hu-HU&quot;
-        }
-    }
-}</pre>
-</div>
-<div created="20200823121018799" modified="20200823121018799" title="$:/temp/NewTagName">
-<pre></pre>
-</div>
-<div created="20200823143611269" modified="20200823192218657" title="$:/temp/search">
+<div created="20200824164452178" list="$:/Import $:/bimlas/property-comparison Extinction [[Hamburger and Macaroni]]" modified="20200824164458188" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.22">
@@ -10047,8 +9997,11 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200823191133760" modified="20200823191133760" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
+<div bag="default" created="20180809054440155" creator="bimlas" modified="20180809054441238" modifier="bimlas" revision="0" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki">
 <pre>fluid-fixed</pre>
+</div>
+<div bag="default" created="20190828054719166" modified="20190828054720317" revision="0" title="$:/themes/tiddlywiki/vanilla/options/stickytitles" type="text/vnd.tiddlywiki">
+<pre>yes</pre>
 </div>
 <div created="20200823195024733" modified="20200823195352202" tags="" title="Crockpot Macaroni &amp; Cheese">
 <pre>[[#category: Recipe]]
