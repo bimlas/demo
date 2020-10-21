@@ -9861,7 +9861,7 @@ function incrementCounter(title) {
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201021090821167" list="README $:/palette $:/palettes/Vanilla $:/ControlPanel $:/AdvancedSearch [[View template]] $:/bimlas/viewcounter/startup.js" modified="20201021093134388" title="$:/StoryList">
+<div list="README [[View template]] $:/bimlas/viewcounter/startup.js" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201021090823835" modified="20201021090921395" title="$:/temp/advancedsearch">
@@ -10055,7 +10055,7 @@ function incrementCounter(title) {
 <div count="2" last="20201021093257398" title="$:/viewcounters/View template">
 <pre></pre>
 </div>
-<div created="20201021084633638" modified="20201021093242785" title="README">
+<div created="20201021084633638" modified="20201021094039879" title="README">
 <pre>Count the opening of tiddlers and store the time of the last opening.
 
 Inspired by https://notes.andymatuschak.org/z3N113rxPFreW9xUkLkUFomr2LUqfXbdCo3M and https://groups.google.com/g/tiddlywiki/c/7kGzLwPcCIk
@@ -10067,7 +10067,7 @@ Open this tiddler in edit mode to view the code.
 !!! An MRU list can be created based on the last view date
 
 &lt;ul&gt;
-  &lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[last]reverse[]]&quot;&gt;
+  &lt;$list filter=&quot;[prefix[$:/viewcounters/]!nsort[last]]&quot;&gt;
     &lt;li&gt;{{!!last}} &lt;$link to={{{ [all[current]removeprefix[$:/viewcounters/]] }}}/&gt;&lt;/li&gt;
   &lt;/$list&gt;
 &lt;/ul&gt;
@@ -10075,7 +10075,7 @@ Open this tiddler in edit mode to view the code.
 !!! You can create a custom search algorithm that displays the most open tiddler (based on the counts) at the top of the list
 
 &lt;ul&gt;
-  &lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[count]reverse[]]&quot;&gt;
+  &lt;$list filter=&quot;[prefix[$:/viewcounters/]!nsort[count]]&quot;&gt;
     &lt;li&gt;{{!!count}} &lt;$link to={{{ [all[current]removeprefix[$:/viewcounters/]] }}}/&gt;&lt;/li&gt;
   &lt;/$list&gt;
 &lt;/ul&gt;
