@@ -239,6 +239,16 @@ Error message and password prompt
 
 <li>$:/state/tree/$:/viewcounters/</li>
 
+<li>$:/state/tree/$:/viewcounters/$:/</li>
+
+<li>$:/state/tree/$:/viewcounters/$:/bimlas/</li>
+
+<li>$:/state/tree/$:/viewcounters/$:/bimlas/splash-screen/</li>
+
+<li>$:/state/tree/$:/viewcounters/$:/bimlas/viewcounter/</li>
+
+<li>$:/state/tree/$:/viewcounters/$:/palettes/</li>
+
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
 <li>$:/StoryList</li>
@@ -257,17 +267,9 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/settings/editorfontfamily</li>
 
-<li>$:/viewcounters/$:/AdvancedSearch</li>
-
-<li>$:/viewcounters/$:/bimlas/splash-screen/template</li>
-
 <li>$:/viewcounters/$:/bimlas/viewcounter/startup.js</li>
 
 <li>$:/viewcounters/$:/ControlPanel</li>
-
-<li>$:/viewcounters/$:/palette</li>
-
-<li>$:/viewcounters/$:/palettes/Vanilla</li>
 
 <li>$:/viewcounters/README</li>
 
@@ -9826,8 +9828,8 @@ function incrementCounter(title) {
 <div created="20201021083556769" modified="20201021084008878" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20201021083555210" modified="20201021090819921" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20201021083555210" modified="20201021093302795" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20201021084411165" modified="20201021084411165" title="$:/state/tree/$:/bimlas/">
 <pre>show</pre>
@@ -9841,10 +9843,25 @@ function incrementCounter(title) {
 <div created="20201021083601356" modified="20201021083601356" title="$:/state/tree/$:/viewcounters/">
 <pre>show</pre>
 </div>
+<div created="20201021093054184" modified="20201021093054184" title="$:/state/tree/$:/viewcounters/$:/">
+<pre>show</pre>
+</div>
+<div created="20201021093127930" modified="20201021093127930" title="$:/state/tree/$:/viewcounters/$:/bimlas/">
+<pre>show</pre>
+</div>
+<div created="20201021093128598" modified="20201021093128598" title="$:/state/tree/$:/viewcounters/$:/bimlas/splash-screen/">
+<pre>show</pre>
+</div>
+<div created="20201021093133626" modified="20201021093133626" title="$:/state/tree/$:/viewcounters/$:/bimlas/viewcounter/">
+<pre>show</pre>
+</div>
+<div created="20201021093138022" modified="20201021093138022" title="$:/state/tree/$:/viewcounters/$:/palettes/">
+<pre>show</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201021090821167" list="README $:/viewcounters/$:/palettes/Vanilla [[View template]] $:/bimlas/viewcounter/startup.js" modified="20201021092341926" title="$:/StoryList">
+<div created="20201021090821167" list="README $:/palette $:/palettes/Vanilla $:/ControlPanel $:/AdvancedSearch [[View template]] $:/bimlas/viewcounter/startup.js" modified="20201021093134388" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201021090823835" modified="20201021090921395" title="$:/temp/advancedsearch">
@@ -10026,31 +10043,19 @@ function incrementCounter(title) {
 <div bag="default" created="20181113153650853" modified="20181113153654077" revision="0" title="$:/themes/tiddlywiki/vanilla/settings/editorfontfamily" type="text/vnd.tiddlywiki">
 <pre>monospace</pre>
 </div>
-<div count="1" last="20201021090821171" title="$:/viewcounters/$:/AdvancedSearch">
+<div count="1" last="20201021093153390" title="$:/viewcounters/$:/bimlas/viewcounter/startup.js">
 <pre></pre>
 </div>
-<div count="2" last="20201021092341930" title="$:/viewcounters/$:/bimlas/splash-screen/template">
+<div count="1" last="20201021093156150" title="$:/viewcounters/$:/ControlPanel">
 <pre></pre>
 </div>
-<div count="3" last="20201021091240712" title="$:/viewcounters/$:/bimlas/viewcounter/startup.js">
+<div count="3" last="20201021093255998" title="$:/viewcounters/README">
 <pre></pre>
 </div>
-<div count="1" last="20201021085251743" title="$:/viewcounters/$:/ControlPanel">
+<div count="2" last="20201021093257398" title="$:/viewcounters/View template">
 <pre></pre>
 </div>
-<div title="$:/viewcounters/$:/palette">
-<pre>1</pre>
-</div>
-<div title="$:/viewcounters/$:/palettes/Vanilla">
-<pre>1</pre>
-</div>
-<div count="3" last="20201021092356599" title="$:/viewcounters/README">
-<pre></pre>
-</div>
-<div count="30" last="20201021084307565" title="$:/viewcounters/View template">
-<pre></pre>
-</div>
-<div created="20201021084633638" modified="20201021092340010" title="README">
+<div created="20201021084633638" modified="20201021093242785" title="README">
 <pre>Count the opening of tiddlers and store the time of the last opening.
 
 Inspired by https://notes.andymatuschak.org/z3N113rxPFreW9xUkLkUFomr2LUqfXbdCo3M and https://groups.google.com/g/tiddlywiki/c/7kGzLwPcCIk
@@ -10061,11 +10066,19 @@ Open this tiddler in edit mode to view the code.
 
 !!! An MRU list can be created based on the last view date
 
-&lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[last]reverse[]removeprefix[$:/viewcounters/]]&quot;/&gt;
+&lt;ul&gt;
+  &lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[last]reverse[]]&quot;&gt;
+    &lt;li&gt;{{!!last}} &lt;$link to={{{ [all[current]removeprefix[$:/viewcounters/]] }}}/&gt;&lt;/li&gt;
+  &lt;/$list&gt;
+&lt;/ul&gt;
 
 !!! You can create a custom search algorithm that displays the most open tiddler (based on the counts) at the top of the list
 
-&lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[count]reverse[]removeprefix[$:/viewcounters/]]&quot;/&gt;
+&lt;ul&gt;
+  &lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[count]reverse[]]&quot;&gt;
+    &lt;li&gt;{{!!count}} &lt;$link to={{{ [all[current]removeprefix[$:/viewcounters/]] }}}/&gt;&lt;/li&gt;
+  &lt;/$list&gt;
+&lt;/ul&gt;
 
 !! Installation
 
