@@ -9844,7 +9844,7 @@ function incrementCounter(title) {
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20201021090821167" list="README [[View template]] $:/bimlas/viewcounter/startup.js" modified="20201021090821167" title="$:/StoryList">
+<div created="20201021090821167" list="README $:/viewcounters/$:/palettes/Vanilla [[View template]] $:/bimlas/viewcounter/startup.js" modified="20201021092341926" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201021090823835" modified="20201021090921395" title="$:/temp/advancedsearch">
@@ -10029,7 +10029,7 @@ function incrementCounter(title) {
 <div count="1" last="20201021090821171" title="$:/viewcounters/$:/AdvancedSearch">
 <pre></pre>
 </div>
-<div count="1" last="20201021084534508" title="$:/viewcounters/$:/bimlas/splash-screen/template">
+<div count="2" last="20201021092341930" title="$:/viewcounters/$:/bimlas/splash-screen/template">
 <pre></pre>
 </div>
 <div count="3" last="20201021091240712" title="$:/viewcounters/$:/bimlas/viewcounter/startup.js">
@@ -10044,13 +10044,13 @@ function incrementCounter(title) {
 <div title="$:/viewcounters/$:/palettes/Vanilla">
 <pre>1</pre>
 </div>
-<div count="2" last="20201021090924393" title="$:/viewcounters/README">
+<div count="3" last="20201021092356599" title="$:/viewcounters/README">
 <pre></pre>
 </div>
 <div count="30" last="20201021084307565" title="$:/viewcounters/View template">
 <pre></pre>
 </div>
-<div created="20201021084633638" modified="20201021091306609" title="README">
+<div created="20201021084633638" modified="20201021092340010" title="README">
 <pre>Count the opening of tiddlers and store the time of the last opening.
 
 Inspired by https://notes.andymatuschak.org/z3N113rxPFreW9xUkLkUFomr2LUqfXbdCo3M and https://groups.google.com/g/tiddlywiki/c/7kGzLwPcCIk
@@ -10061,11 +10061,11 @@ Open this tiddler in edit mode to view the code.
 
 !!! An MRU list can be created based on the last view date
 
-&lt;$list filter=&quot;[prefix[$:/viewcounters]sort[last]reverse[]]&quot;/&gt;
+&lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[last]reverse[]removeprefix[$:/viewcounters/]]&quot;/&gt;
 
 !!! You can create a custom search algorithm that displays the most open tiddler (based on the counts) at the top of the list
 
-&lt;$list filter=&quot;[prefix[$:/viewcounters]sort[count]reverse[]]&quot;/&gt;
+&lt;$list filter=&quot;[prefix[$:/viewcounters/]sort[count]reverse[]removeprefix[$:/viewcounters/]]&quot;/&gt;
 
 !! Installation
 
