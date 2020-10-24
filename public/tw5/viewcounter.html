@@ -9794,10 +9794,8 @@ function incrementCounter(title) {
     }
 }</pre>
 </div>
-<div created="20201021084350428" modified="20201021084422985" title="$:/DefaultTiddlers">
-<pre>[[README]]
-[[View template]]
-[[$:/bimlas/viewcounter/startup.js]]</pre>
+<div created="20201021084350428" modified="20201024204409547" title="$:/DefaultTiddlers">
+<pre>[[README]]</pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
@@ -9822,8 +9820,8 @@ function incrementCounter(title) {
 <div created="20201021090854355" modified="20201021090854355" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
-<div created="20201021085256550" modified="20201021085256550" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Saving</pre>
+<div created="20201021085256550" modified="20201024204405809" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20201021083556769" modified="20201021084008878" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
@@ -9861,7 +9859,7 @@ function incrementCounter(title) {
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="README [[View template]] $:/bimlas/viewcounter/startup.js" title="$:/StoryList">
+<div created="20201024204403796" list="README [[View template]] $:/bimlas/viewcounter/startup.js" modified="20201024204403796" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201021090823835" modified="20201021090921395" title="$:/temp/advancedsearch">
@@ -9880,19 +9878,19 @@ function incrementCounter(title) {
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;https://bimlas.gitlab.io/demo/tw5/viewcounter.html&quot;
+            &quot;text&quot;: &quot;file:///media/bimlas/src/demo/public/tw5/viewcounter.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;bimlas.gitlab.io&quot;
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;https:&quot;
+            &quot;text&quot;: &quot;file:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -9900,7 +9898,7 @@ function incrementCounter(title) {
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/demo/tw5/viewcounter.html&quot;
+            &quot;text&quot;: &quot;/media/bimlas/src/demo/public/tw5/viewcounter.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9908,7 +9906,7 @@ function incrementCounter(title) {
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;https://bimlas.gitlab.io&quot;
+            &quot;text&quot;: &quot;file://&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -10046,7 +10044,7 @@ function incrementCounter(title) {
 <div count="1" last="20201021093153390" title="$:/viewcounters/$:/bimlas/viewcounter/startup.js">
 <pre></pre>
 </div>
-<div count="1" last="20201021093156150" title="$:/viewcounters/$:/ControlPanel">
+<div count="2" last="20201024204403800" title="$:/viewcounters/$:/ControlPanel">
 <pre></pre>
 </div>
 <div count="3" last="20201021093255998" title="$:/viewcounters/README">
@@ -10055,40 +10053,11 @@ function incrementCounter(title) {
 <div count="2" last="20201021093257398" title="$:/viewcounters/View template">
 <pre></pre>
 </div>
-<div created="20201021084633638" modified="20201021094039879" title="README">
-<pre>Count the opening of tiddlers and store the time of the last opening.
+<div created="20201021084633638" modified="20201024204448534" title="README">
+<pre>! The view counter released as a plugin
 
-Inspired by https://notes.andymatuschak.org/z3N113rxPFreW9xUkLkUFomr2LUqfXbdCo3M and https://groups.google.com/g/tiddlywiki/c/7kGzLwPcCIk
-
-!! Usage ideas
-
-Open this tiddler in edit mode to view the code.
-
-!!! An MRU list can be created based on the last view date
-
-&lt;ul&gt;
-  &lt;$list filter=&quot;[prefix[$:/viewcounters/]!nsort[last]]&quot;&gt;
-    &lt;li&gt;{{!!last}} &lt;$link to={{{ [all[current]removeprefix[$:/viewcounters/]] }}}/&gt;&lt;/li&gt;
-  &lt;/$list&gt;
-&lt;/ul&gt;
-
-!!! You can create a custom search algorithm that displays the most open tiddler (based on the counts) at the top of the list
-
-&lt;ul&gt;
-  &lt;$list filter=&quot;[prefix[$:/viewcounters/]!nsort[count]]&quot;&gt;
-    &lt;li&gt;{{!!count}} &lt;$link to={{{ [all[current]removeprefix[$:/viewcounters/]] }}}/&gt;&lt;/li&gt;
-  &lt;/$list&gt;
-&lt;/ul&gt;
-
-!! Installation
-
-* Make a backup from your wiki
-* Drag and drop [[View template]] and [[$:/bimlas/viewcounter/startup.js]] to your wiki
-* Save it and reload
-
-!! Attention
-
-If you save to the cloud (Git, Dropbox, etc. saver), you may want to turn off autosave ($:/ControlPanel -&gt; Saving -&gt; General) because each time you open a tiddler, the wiki changes (saving the counts), thus the saver wants to save immediately.</pre>
+See https://bimlas.gitlab.io/tw5-viewcounter for details.
+</pre>
 </div>
 <div created="20201021083611785" modified="20201021084143603" tags="$:/tags/ViewTemplate" title="View template">
 <pre>Number of views: &lt;$text text={{{ [all[current]addprefix[$:/viewcounters/]get[count]] }}}/&gt; (&lt;$text text={{{ [all[current]addprefix[$:/viewcounters/]get[last]] }}}/&gt;)</pre>
